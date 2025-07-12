@@ -18,6 +18,159 @@ function closeContactModal() {
     }
 }
 
+// Function to fetch and inject common HTML components
+async function loadCommonComponents() {
+    console.log("Loading common HTML components...");
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    const contactModalPlaceholder = document.getElementById('contact-modal-placeholder');
+
+    // Fetch and inject header
+    if (headerPlaceholder) {
+        try {
+            const response = await fetch('html/header.html');
+            if (response.ok) {
+                headerPlaceholder.innerHTML = await response.text();
+                console.log("Header loaded successfully.");
+            } else {
+                console.error("Failed to load header:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error fetching header:", error);
+        }
+    }
+
+    // Fetch and inject footer
+    if (footerPlaceholder) {
+        try {
+            const response = await fetch('html/footer.html');
+            if (response.ok) {
+                footerPlaceholder.innerHTML = await response.text();
+                console.log("Footer loaded successfully.");
+            } else {
+                console.error("Failed to load footer:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error fetching footer:", error);
+        }
+    }
+
+    // Fetch and inject contact modal
+    if (contactModalPlaceholder) {
+        try {
+            const response = await fetch('html/contact_modal.html');
+            if (response.ok) {
+                contactModalPlaceholder.innerHTML = await response.text();
+                console.log("Contact modal loaded successfully.");
+            } else {
+                console.error("Failed to load contact modal:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error fetching contact modal:", error);
+        }
+    }
+}
+
+// Function to initialize all event listeners after dynamic content is loaded
+function initializeEventListeners() {
+    console.log("Initializing event listeners...");
+
+    // Desktop Contact Button
+    var contactBtnDesktop = document.getElementById("contactModalBtnDesktop");
+    if (contactBtnDesktop) {
+        contactBtnDesktop.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            openContactModal();
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    } else {
+        console.warn("Desktop Contact modal button (contactModalBtnDesktop) not found!");
+    }
+
+    // Mobile Contact Button
+    var contactBtnMobile = document.getElementById("contactModalBtnMobile");
+    if (contactBtnMobile) {
+        contactBtnMobile.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            openContactModal();
+            // Close mobile menu after clicking contact
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    } else {
+        console.warn("Mobile Contact modal button (contactModalBtnMobile) not found!");
+    }
+
+    // Event listener for the close button inside the modal
+    var closeSpan = document.querySelector("#contactModal .close-button");
+    if (closeSpan) {
+        closeSpan.addEventListener('click', closeContactModal);
+    } else {
+        console.warn("Contact modal close button not found!");
+    }
+
+    // Event listener to close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        var modal = document.getElementById("contactModal");
+        if (modal && event.target == modal) { // Ensure modal exists before checking event.target
+            closeContactModal();
+        }
+    });
+
+    // Mobile menu toggle functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            console.log("Mobile menu button clicked!");
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a navigation link inside it is clicked
+        const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Close mobile menu when window is resized to desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // 768px is Tailwind's md breakpoint
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    } else {
+        console.warn("Mobile menu button or mobile menu element not found after header load!");
+    }
+
+    // Highlight active navigation link
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    navLinks.forEach(link => {
+        // Normalize paths for comparison (e.g., remove leading/trailing slashes, .html)
+        const linkPath = link.getAttribute('href').replace(/^\/|\/$/g, '').replace(/\.html$/, '');
+        const pagePath = currentPath.replace(/^\/|\/$/g, '').replace(/\.html$/, '');
+
+        // Handle index.html specifically, or if paths match
+        if (linkPath === pagePath || (linkPath === 'index' && (pagePath === '' || pagePath === 'index'))) {
+            link.classList.add('text-blue-600');
+            link.classList.remove('text-gray-600', 'hover:text-blue-600');
+        } else {
+            link.classList.remove('text-blue-600');
+            link.classList.add('text-gray-600', 'hover:text-blue-600');
+        }
+    });
+}
+
+
 // Function to dynamically load content into index.html and projects.html
 async function loadDynamicContent() {
     console.log("Attempting to load dynamic content...");
@@ -37,7 +190,6 @@ async function loadDynamicContent() {
             
             const tempContainer = document.createElement('div'); // Create a temporary div
             tempContainer.innerHTML = text; // Parse the HTML string into the temporary div
-            console.log("tempContainer.innerHTML for skills-graphical.html (index page):", tempContainer.innerHTML.substring(0, 500) + "..."); // Log first 500 chars
 
             const coreSkillsSection = tempContainer.querySelector('#core-skills'); // Query the specific section ID within the temp div
             if (coreSkillsSection) {
@@ -78,11 +230,9 @@ async function loadDynamicContent() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const text = await response.text();
-            console.log("Project cards HTML fetched successfully (index page). Raw text length:", text.length);
             
             const tempContainer = document.createElement('div'); // Create a temporary div
             tempContainer.innerHTML = text; // Parse the HTML string into the temporary div
-            console.log("tempContainer.innerHTML for project_cards.html (index page):", tempContainer.innerHTML.substring(0, 500) + "..."); // Log first 500 chars
 
             const projectCards = Array.from(tempContainer.querySelectorAll('.project-card')).slice(0, 6); // Query within the temp div
             console.log("Found", projectCards.length, "featured project cards.");
@@ -117,11 +267,9 @@ async function loadDynamicContent() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const text = await response.text();
-            console.log("Project cards HTML fetched successfully (projects page). Raw text length:", text.length);
             
             const tempContainer = document.createElement('div'); // Create a temporary div
             tempContainer.innerHTML = text; // Parse the HTML string into the temporary div
-            console.log("tempContainer.innerHTML for project_cards.html (projects page):", tempContainer.innerHTML.substring(0, 500) + "..."); // Log first 500 chars
 
             const allProjectCards = Array.from(tempContainer.querySelectorAll('.project-card')); // Query within the temp div
             console.log("Found", allProjectCards.length, "project cards for all projects page.");
@@ -142,32 +290,14 @@ async function loadDynamicContent() {
 }
 
 
-// Event listener to attach to the contact button in the navigation
-document.addEventListener('DOMContentLoaded', function() {
-    var contactBtn = document.getElementById("contactModalBtn");
-    if (contactBtn) {
-        contactBtn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            openContactModal();
-        });
-    } else {
-        console.error("Contact modal button (contactModalBtn) not found!");
-    }
+// Event listener to run once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', async function() {
+    // Load common components first
+    await loadCommonComponents();
+    
+    // Then initialize event listeners for the newly loaded components
+    initializeEventListeners();
 
-    // Event listener for the close button inside the modal
-    var closeSpan = document.querySelector("#contactModal .close-button");
-    if (closeSpan) {
-        closeSpan.addEventListener('click', closeContactModal);
-    }
-
-    // Event listener to close modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-        var modal = document.getElementById("contactModal");
-        if (event.target == modal) {
-            closeContactModal();
-        }
-    });
-
-    // Load dynamic content when the DOM is fully loaded
+    // Then load other dynamic content specific to the page
     loadDynamicContent();
 });

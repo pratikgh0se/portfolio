@@ -16,15 +16,39 @@
 <body class="antialiased">
     <!-- Header/Navigation Bar -->
     <header class="bg-white shadow-md py-4">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">Home</a>
-            <ul class="flex space-x-6">
-                <!-- Navigation Links -->
-                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
-                <li><a href="projects.html" class="text-gray-600 hover:text-blue-600 font-medium">Projects</a></li>
-                <li><a href="skills-graphical.html" class="text-blue-600 font-medium">Skills</a></li>
-                <li><a href="#" id="contactModalBtn" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
-            </ul>
+        <nav class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo/Site Title -->
+                <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-800 flex items-center space-x-2">
+                    <i class="fas fa-cloud text-blue-600 text-3xl"></i> <!-- Cloud icon from Font Awesome -->
+                    <span>pratik.dev</span>
+                </a>
+                
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                    <li><a href="projects.html" class="text-gray-600 hover:text-blue-600 font-medium">Projects</a></li>
+                    <li><a href="skills-graphical.html" class="text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                    <li><a href="#" id="contactModalBtnDesktop" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile Navigation (Hidden by default, toggled by JS) -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="about.html" class="block text-gray-600 hover:text-blue-600 font-medium mobile-nav-link">About</a></li>
+                    <li><a href="projects.html" class="block text-gray-600 hover:text-blue-600 font-medium mobile-nav-link">Projects</a></li>
+                    <li><a href="skills-graphical.html" class="block text-gray-600 hover:text-blue-600 font-medium mobile-nav-link">Skills</a></li>
+                    <li><a href="#" id="contactModalBtnMobile" class="block text-gray-600 hover:text-blue-600 font-medium mobile-nav-link">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
