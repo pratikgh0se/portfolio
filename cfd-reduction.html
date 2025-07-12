@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: CFD Reduction & Observability Enhancement | Pratik Ghose</title>
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Pratik Ghose</a>
+            <ul class="flex space-x-6">
+                <!-- Navigation Links -->
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                <li><a href="projects.html" class="text-blue-600 font-medium">Projects</a></li>
+                <li><a href="skills-graphical.html" class="text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                <li><a href="#" id="contactModalBtn" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="py-16 md:py-20 container mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Customer Found Bugs (CFDs) Reduction & Observability Enhancement</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> ThoughtSpot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> Nov 2021 - April 2024</p>
+
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Reduced Customer Found Bugs (CFDs) by 20% by standardizing dashboards and alerting in Grafana and Kibana. Cut logging cost by 38% by detecting log overflows and decommissioning obsolete metrics.
+            </p>
+
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Grafana, Kibana, Prometheus, Telegraf, New Relic, OpenTelemetry, Slack, Jira, Google Drive, Glean Search, LLMs, RAG, CRDs, Operator Pattern, Go, Python.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Situation</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    ThoughtSpot was experiencing a high volume of Customer Found Bugs (CFDs), which indicated significant gaps in our proactive monitoring and alerting capabilities. This reactive posture led to customer dissatisfaction, increased support burden, and prolonged Mean Time To Resolution (MTTR) for critical issues. Concurrently, our observability costs were escalating rapidly due to inefficient data retention policies and a proliferation of unused logs and metrics across our systems, leading to unnecessary storage and processing expenses.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Task</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    The multifaceted task involved: (1) Significantly reducing CFDs by enhancing proactive monitoring, standardizing observability practices, and fostering a culture of early issue detection. (2) Optimizing logging and metric costs by identifying and eliminating redundant or unused data. (3) Designing and building an automated Root Cause Analysis (RCA) tool to accelerate incident resolution and improve post-incident learning.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Spearheaded a comprehensive "proactive bug hunt" initiative, including collaborative audits with engineering teams and implementation of templated Grafana dashboards based on RED and USE methodologies.</li>
+                    <li>Developed Kubernetes Custom Resource Definitions (CRDs) and an Operator pattern in Go to automate the creation and management of Service Level Indicators (SLIs) and Service Level Objectives (SLOs) dashboards and alert rules in Grafana.</li>
+                    <li>Collaborated with on-call and development teams to review and refine existing alerts, systematically eliminating noisy, unactionable, or duplicate alerts, reducing alert fatigue by over 50%.</li>
+                    <li>Established a sophisticated alerting system that proactively identified services generating excessive log volumes, leading to a 27% reduction in overall log size.</li>
+                    <li>Devised and implemented Python scripts to analyze metric usage across dashboards and alerts, identifying and decommissioning obsolete metrics, resulting in a 38% cost reduction.</li>
+                    <li>Developed a custom Telegraf plugin to gain granular insights into log file growth and attribute costs more accurately.</li>
+                    <li>Designed the comprehensive architecture for "Pharos," an automated Root Cause Analysis (RCA) tool, integrating diverse data sources like Prometheus metrics, Kibana logs, Slack conversations, and Jira issues.</li>
+                    <li>Built a sophisticated Retrieval-Augmented Generation (RAG) system at the core of Pharos, leveraging a Large Language Model (LLM) to generate comprehensive, human-readable RCA reports.</li>
+                    <li>Deployed Pharos in the development environment and integrated it seamlessly with Slack.</li>
+                    <li>Conducted thorough architecture and security reviews, implementing code changes to reduce vulnerabilities and security threats.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Substantial <span class="font-semibold text-blue-600">40% reduction</span> in Customer Found Bugs (CFDs) over the subsequent year, significantly improving customer satisfaction.</li>
+                    <li>Logging costs were cut by <span class="font-semibold text-blue-600">38%</span>, and overall metric production by <span class="font-semibold text-blue-600">38%</span>, resulting in significant annual cost savings.</li>
+                    <li>The "Pharos" RCA tool accelerated incident resolution by an estimated <span class="font-semibold text-blue-600">30%</span>.</li>
+                    <li>Standardized dashboards improved system health visibility and application performance across the board.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This was a highly impactful and transformative project that directly addressed critical business objectives: improving customer satisfaction and enhancing operational efficiency. My leadership in driving the proactive bug hunt, combined with deep technical skills in observability (Grafana, Kibana, Prometheus, Telegraf), Kubernetes automation (CRDs, Operators), and cutting-edge AI/ML (RAG for Pharos), was absolutely critical. The ability to collaborate effectively across multiple engineering teams and translate complex technical insights into actionable cost savings demonstrated strong business acumen and a holistic understanding of the platform. The successful development and deployment of Pharos showcased significant innovation in leveraging AI for complex operational challenges, setting a new standard for incident management at ThoughtSpot.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="projects.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
+                </a>
+                <a href="index.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-home"></i> <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Pratik Ghose. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/pratikgh0se" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal HTML Structure -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeContactModal()">&times;</span>
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Get In Touch</h2>
+            <p class="text-lg text-gray-700 text-center mb-6">
+                I am actively seeking challenging opportunities in DevOps, Cloud Engineering, and Site Reliability Engineering.
+                Feel free to connect with me!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:pratikghose1999@gmail.com" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i> <span>pratikghose1999@gmail.com</span>
+                </a>
+                <a href="tel:+917978437436" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-phone"></i> <span>+91-7978437436</span>
+                </a>
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="btn-primary flex items-center space-x-2">
+                    <i class="fab fa-linkedin"></i> <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

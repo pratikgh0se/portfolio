@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Decentralized Feature Flag System | Pratik Ghose</title>
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Pratik Ghose</a>
+            <ul class="flex space-x-6">
+                <!-- Navigation Links -->
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                <li><a href="projects.html" class="text-blue-600 font-medium">Projects</a></li>
+                <li><a href="skills-graphical.html" class="text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                <li><a href="#" id="contactModalBtn" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="py-16 md:py-20 container mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Decentralized Feature Flag System with LaunchDarkly</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> Highspot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> April 2024 - Present</p>
+
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Designed, developed, and implemented a robust, decentralized feature flag system using LaunchDarkly across multiple microservices. This initiative aimed to enable controlled feature rollouts, A/B testing, and dynamic configuration updates, significantly reducing deployment risk and solving rigid deployment cycles.
+            </p>
+
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Clojure, Java, LaunchDarkly SDK, AWS Secrets Manager, External Secrets Operator (ESO), Kubernetes, ArgoCD, New Relic.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Situation</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Highspot's existing deployment process was monolithic and rigid, characterized by infrequent, large-batch releases. This made it challenging to introduce new features incrementally, conduct A/B tests on user segments, or dynamically alter application behavior (e.g., enabling/disabling features for specific customers or environments) without requiring full, high-risk deployments. Such rigidity significantly slowed down iteration cycles, increased the potential for production incidents due to large blast radii, and limited the ability to perform dark launches or controlled rollouts.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Task</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Design, develop, and integrate a flexible, secure, and highly available feature flag system using LaunchDarkly into the existing Clojure microservices architecture. The primary goal was to enable controlled feature rollouts, dynamic configuration management, and A/B testing capabilities, thereby reducing deployment risk and accelerating the pace of innovation.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Spearheaded the architectural design of the new feature flag system, selecting LaunchDarkly as the preferred solution and writing core Clojure code to initialize the LaunchDarkly SDK client within the critical Magma microservice.</li>
+                    <li>Developed a feature-service wrapper around the raw LaunchDarkly client to promote reusability and provide a simplified, consistent interface for other application components.</li>
+                    <li>Implemented a sophisticated feature manager component responsible for coordinating between the feature-service and various flag sources, including a fallback mechanism to Mongo for legacy flags or in scenarios where LaunchDarkly might be unavailable.</li>
+                    <li>Authored and championed a Pull Request (PR) for integrating the LaunchDarkly SDK key via External Secrets Operator (ESO) with AWS Secrets Manager, ensuring sensitive API keys were never hardcoded and securely distributed to Kubernetes pods.</li>
+                    <li>Refactored the singleton initialization of the LaunchDarkly client from lazy loading to an eager initialization model within systems.clj and migrated lifecycle management to defstate for robust and predictable state management.</li>
+                    <li>Developed custom scripts and comprehensive unit/integration tests to rigorously validate the end-to-end flag flow in Magma, including creating test cases for various scenarios and debugging complex runtime errors.</li>
+                    <li>Implemented multi-context feature flag fetching to support sophisticated targeting rules.</li>
+                    <li>Deployed the system to su0 (a specific scale unit within the latest environment) for live testing with real traffic.</li>
+                    <li>Initiated the setup for data source monitoring of LaunchDarkly connectivity within New Relic, establishing alerts for service health.</li>
+                    <li>Maintained active and transparent collaboration with team leads (Anna, Dylan) for architectural discussions, design reviews, and code feedback.</li>
+                    <li>Partnered closely with other engineers (Pankaj, Justin) to debug complex inter-service issues.</li>
+                    <li>Documented the entire integration process in Confluence and conducted formal knowledge transfer sessions for relevant engineering teams.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Successfully designed, developed, and integrated a robust, decentralized feature flag system that is production-ready and deployed to su0.</li>
+                    <li>Significantly reduced deployment risk by enabling controlled feature rollouts, dark launches, and A/B testing without requiring full application redeployments.</li>
+                    <li>Led to faster iteration cycles for product development and improved developer productivity by decoupling feature releases from code deployments.</li>
+                    <li>Enhanced the ability to conduct real-time experimentation and ensured secure key management through ESO integration, bolstering the platform's security posture.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This project was a critical success, fundamentally transforming Highspot's feature delivery capabilities and accelerating its product development lifecycle. My ability to lead the design, implement complex Clojure code, integrate securely with external services, and conduct thorough, multi-faceted testing was paramount. The collaborative approach, especially in debugging intricate cross-service issues, proved highly effective in overcoming technical hurdles. The system now provides a flexible, resilient, and safe mechanism for future product innovation and experimentation, allowing Highspot to be more agile and responsive to market demands.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="projects.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
+                </a>
+                <a href="index.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-home"></i> <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Pratik Ghose. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/pratikgh0se" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal HTML Structure -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeContactModal()">&times;</span>
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Get In Touch</h2>
+            <p class="text-lg text-gray-700 text-center mb-6">
+                I am actively seeking challenging opportunities in DevOps, Cloud Engineering, and Site Reliability Engineering.
+                Feel free to connect with me!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:pratikghose1999@gmail.com" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i> <span>pratikghose1999@gmail.com</span>
+                </a>
+                <a href="tel:+917978437436" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-phone"></i> <span>+91-7978437436</span>
+                </a>
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="btn-primary flex items-center space-x-2">
+                    <i class="fab fa-linkedin"></i> <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

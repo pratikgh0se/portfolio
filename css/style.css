@@ -1,0 +1,190 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Section Heading Styles */
+.section-heading {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #3b82f6; /* Blue-500 */
+    border-radius: 9999px;
+}
+
+/* Primary Button Styles */
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+/* Project Card Styles (for index.html and projects.html) */
+.project-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Category Title Styles (for index.html and skills-graphical.html) */
+.skill-category-title {
+    color: #1e40af; /* Blue-800 */
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Skill Item Styles (for index.html) */
+.skill-item {
+    background-color: #e0e7ff; /* Blue-100 */
+    color: #1e40af; /* Blue-800 */
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Skill Badge Container (for index.html and skills-graphical.html) */
+.skill-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Skill Badge Styles (for index.html and skills-graphical.html) */
+.skill-badge {
+    background-color: #e0e7ff; /* Blue-100 */
+    color: #1e40af; /* Blue-800 */
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px; /* Fully rounded */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Modal specific styles (for contact modal) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Blur effect */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* Specific styles for skills-graphical.html and project detail pages */
+.skill-category-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.skill-category-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e7ff;
+}
+.skill-item-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e0e7ff;
+    color: #1e40af;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0.3rem;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+.skill-item-badge:hover {
+    background-color: #c3d4ff;
+    transform: translateY(-2px);
+}
+.skill-item-badge i {
+    margin-right: 0.5rem;
+}
+
+.detail-section {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+.detail-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e0e7ff;
+    padding-bottom: 0.5rem;
+}
+.detail-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+.detail-section li {
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}

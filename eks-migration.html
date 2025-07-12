@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Multi-Cloud Kubernetes Migration & Optimization | Pratik Ghose</title>
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Pratik Ghose</a>
+            <ul class="flex space-x-6">
+                <!-- Navigation Links -->
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                <li><a href="projects.html" class="text-blue-600 font-medium">Projects</a></li>
+                <li><a href="skills-graphical.html" class="text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                <li><a href="#" id="contactModalBtn" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="py-16 md:py-20 container mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Multi-Cloud Kubernetes Migration & Core Service Optimization</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> Highspot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> April 2024 - Present</p>
+
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Directed the migration and optimization of core services across various Kubernetes environments, including Amazon EKS and conceptualizing patterns for Azure AKS, enhancing scalability, reliability, and reducing operational overhead through strategic platform transitions.
+            </p>
+
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Amazon EKS, Azure AKS (conceptual), Kubernetes, Docker, Terraform, ArgoCD, AWS IAM, Prometheus, New Relic, External Secrets Operator (ESO).</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Challenge</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Highspot's core services were deployed across a mix of disparate and legacy infrastructure, including various Kubernetes platforms and older container orchestration systems. This created significant limitations in achieving consistent dynamic scalability, ensuring uniform reliability, and incurred high operational overhead due to fragmented management and maintenance across different cloud providers (e.g., AWS EKS, Azure AKS). The lack of a unified, modern approach hindered rapid development and efficient resource utilization, creating bottlenecks for growth in a multi-cloud landscape.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Developed meticulous migration strategies for transitioning services between different Kubernetes platforms (e.g., to Amazon EKS, and conceptualizing/planning for Azure AKS integrations).</li>
+                    <li>Utilized Terraform to provision and manage Kubernetes clusters (EKS, and defining patterns for AKS) in a declarative manner, focusing on cluster setup, worker node groups, and core service configurations.</li>
+                    <li>Collaborated closely with various development teams to containerize and optimize core services for various Kubernetes environments.</li>
+                    <li>Integrated deployment processes into existing CI/CD pipelines (e.g., using Buildkite for builds and tests, and ArgoCD for declarative Kubernetes deployments) for consistent and automated rollouts across different K8s platforms.</li>
+                    <li>Implemented stringent security configurations within Kubernetes clusters, including fine-grained AWS IAM roles for Kubernetes service accounts (IRSA for EKS) and integrating with External Secrets Operator (ESO) for secure secret management across cloud boundaries.</li>
+                    <li>Ensured seamless integration with unified observability stacks (Prometheus-Operator for metrics, New Relic for metrics, logs, and traces) to provide comprehensive, real-time monitoring of cluster health and application performance across multi-cloud K8s deployments.</li>
+                    <li>Actively debugged complex deployment issues and optimized resource allocation (CPU and memory limits) for pods across diverse Kubernetes environments to achieve optimal performance, stability, and cost efficiency.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Successfully directed the migration and optimization of critical core services to modern Kubernetes platforms (like Amazon EKS), demonstrating capabilities in managing multi-cloud containerized environments.</li>
+                    <li>This resulted in significantly enhanced scalability and improved reliability across diverse cloud footprints.</li>
+                    <li>The transition reduced operational overhead by automating infrastructure provisioning and streamlining cluster management, leading to improved resource utilization and tangible cost efficiency.</li>
+                    <li>The established multi-cloud Kubernetes foundation provides a resilient and agile base for future service development and innovation.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This project demonstrated senior-level capabilities in architecture, planning, and execution within complex multi-cloud Kubernetes environments. My leadership in driving infrastructure transitions and optimizing core services across platforms like EKS (and understanding the patterns for AKS) was crucial. The project not only modernized Highspot's core services but also laid a robust foundation for future growth and operational excellence in a multi-cloud strategy.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="projects.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
+                </a>
+                <a href="index.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-home"></i> <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Pratik Ghose. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/pratikgh0se" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal HTML Structure -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeContactModal()">&times;</span>
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Get In Touch</h2>
+            <p class="text-lg text-gray-700 text-center mb-6">
+                I am actively seeking challenging opportunities in DevOps, Cloud Engineering, and Site Reliability Engineering.
+                Feel free to connect with me!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:pratikghose1999@gmail.com" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i> <span>pratikghose1999@gmail.com</span>
+                </a>
+                <a href="tel:+917978437436" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-phone"></i> <span>+91-7978437436</span>
+                </a>
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="btn-primary flex items-center space-x-2">
+                    <i class="fab fa-linkedin"></i> <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

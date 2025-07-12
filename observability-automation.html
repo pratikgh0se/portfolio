@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Observability Infrastructure Automation | Pratik Ghose</title>
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Pratik Ghose</a>
+            <ul class="flex space-x-6">
+                <!-- Navigation Links -->
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                <li><a href="projects.html" class="text-blue-600 font-medium">Projects</a></li>
+                <li><a href="skills-graphical.html" class="text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                <li><a href="#" id="contactModalBtn" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="py-16 md:py-20 container mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Observability Infrastructure Automation (Terraform & Go Controller)</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> ThoughtSpot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> Nov 2021 - April 2024</p>
+
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Designed and implemented cross-cloud Terraform infrastructure for observability, supporting AWS and GCP environments. Built a Terraform controller in Go and integrated it with ArgoCD for Kubernetes data plane automation.
+            </p>
+
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Terraform, Go, Kubernetes, ArgoCD, AWS, GCP, GitOps, Custom Resource Definitions (CRDs), client-go.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Situation</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    ThoughtSpot operated a complex, multi-cloud environment, with critical services deployed across both AWS and GCP. The observability infrastructure (including monitoring, alerting, and logging components) for these environments was often provisioned and managed manually or through disparate, non-standardized scripts. This fragmented approach led to significant inconsistencies in configurations, frequent configuration drift, increased human errors during setup, and substantial delays in bringing new Kubernetes data planes online with proper monitoring capabilities. The lack of automation was a major bottleneck for scaling operations.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Task</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Automate the end-to-end deployment and ongoing management of observability infrastructure across both AWS and GCP using Infrastructure as Code (Terraform). Furthermore, the task involved building a Kubernetes-native controller in Go and integrating it with ArgoCD to enable GitOps-driven automation for provisioning observability components on new Kubernetes data planes.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Meticulously authored modular, reusable, and cloud-agnostic Terraform modules for common observability components (Prometheus, Grafana, Fluent Bit, New Relic agents) adaptable to both AWS and GCP.</li>
+                    <li>Designed and developed a custom Kubernetes controller from scratch in Go, including defining Custom Resource Definitions (CRDs) and implementing controller logic with the Kubernetes client-go library.</li>
+                    <li>Integrated the controller to interact directly with the Terraform CLI, dynamically generating and executing Terraform configurations upon detecting changes in ObservabilityConfig CRDs.</li>
+                    <li>Implemented robust mechanisms for managing Terraform state securely and comprehensive error reporting.</li>
+                    <li>Configured ArgoCD to manage the deployment of the custom Go Terraform controller itself, ensuring its lifecycle was managed declaratively.</li>
+                    <li>Designed the controller to be triggered by ArgoCD events or Git repository changes, ensuring new Kubernetes clusters automatically had their observability infrastructure set up.</li>
+                    <li>Established and maintained robust CI/CD pipelines (Jenkins and GitHub Actions) to lint/validate Terraform, build/test the Go controller, and deploy it.</li>
+                    <li>Conducted extensive testing, including unit tests, integration tests, and end-to-end tests, to ensure reliability and correctness of the automation.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Successfully automated the end-to-end deployment and ongoing management of observability infrastructure across ThoughtSpot's complex multi-cloud footprint.</li>
+                    <li>The Go Terraform controller, tightly integrated with ArgoCD, enabled a true GitOps approach for observability.</li>
+                    <li>Drastically reduced manual effort by <span class="font-semibold text-blue-600">over 70%</span>.</li>
+                    <li>Improved configuration consistency by <span class="font-semibold text-blue-600">90%</span>.</li>
+                    <li>Accelerated the onboarding of new Kubernetes data planes by <span class="font-semibold text-blue-600">50%</span> with pre-configured monitoring and logging.</li>
+                    <li>Led to a more reliable and efficient operational environment.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This initiative represented a significant leap forward in ThoughtSpot's infrastructure automation maturity and operational efficiency. My strong command of Terraform for Infrastructure as Code, deep expertise in Go for Kubernetes controller development, and a clear understanding of GitOps principles were instrumental in the project's success. The solution not only solved immediate pain points related to manual configuration and inconsistency but also laid a scalable and resilient foundation for future observability needs across diverse cloud environments. The technical depth required to build and integrate such a system was considerable, and its successful implementation demonstrated strong system design, automation, and problem-solving skills.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="projects.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
+                </a>
+                <a href="index.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-home"></i> <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Pratik Ghose. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/pratikgh0se" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal HTML Structure -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeContactModal()">&times;</span>
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Get In Touch</h2>
+            <p class="text-lg text-gray-700 text-center mb-6">
+                I am actively seeking challenging opportunities in DevOps, Cloud Engineering, and Site Reliability Engineering.
+                Feel free to connect with me!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:pratikghose1999@gmail.com" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i> <span>pratikghose1999@gmail.com</span>
+                </a>
+                <a href="tel:+917978437436" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-phone"></i> <span>+91-7978437436</span>
+                </a>
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="btn-primary flex items-center space-x-2">
+                    <i class="fab fa-linkedin"></i> <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

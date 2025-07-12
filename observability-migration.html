@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Observability System Migration & Optimization | Pratik Ghose</title>
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Pratik Ghose</a>
+            <ul class="flex space-x-6">
+                <!-- Navigation Links -->
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                <li><a href="projects.html" class="text-blue-600 font-medium">Projects</a></li>
+                <li><a href="skills-graphical.html" class="text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                <li><a href="#" id="contactModalBtn" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="py-16 md:py-20 container mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Observability System Migration & Optimization</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> Highspot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> April 2024 - Present</p>
+
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Led a monumental initiative to migrate Highspot's legacy observability systems from GCP/GKE to AWS and optimize metric collection, logging, and alerting. This project resulted in significant cost savings, improved system health visibility, and streamlined incident management.
+            </p>
+
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Prometheus, Grafana, New Relic, OpenTelemetry, Fluent Bit, Fluentd, Thanos, Elasticsearch, Rollbar, AWS (EKS, Lambda, Firehose, CloudWatch, S3), GCP (GKE), Terraform, Go, Python, Bash, Google App Scripts, OpsGenie, Jira, GitHub Actions.</p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Situation</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Highspot's observability infrastructure was a complex, fragmented landscape spanning multiple legacy tools (Prometheus v2, Thanos for long-term storage, self-hosted Grafana instances, Elasticsearch for logs, Rollbar for error tracking) and cloud providers (GCP/GKE and AWS). This multi-vendor, multi-cloud sprawl led to exorbitant operational costs (daily metric ingestion ~20TB, monthly storage ~256TB), inconsistent monitoring dashboards, severe alert fatigue due to duplicate or unactionable alerts, and prolonged Mean Time To Resolution (MTTR) for incidents because critical data was scattered across disparate systems, making debugging a "war room" scenario.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Task</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Consolidate and optimize Highspot's observability stack by executing a comprehensive migration to a unified New Relic platform. This involved deprecating all legacy systems and implementing robust, cost-efficient metric and log management strategies to drastically reduce operational costs, enhance system reliability, and significantly improve incident response capabilities.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Conducted a detailed, data-driven analysis of existing observability costs and usage patterns, developing comprehensive deprecation plans for redundant GCP/GKE resources, Prometheus v2 instances, and self-hosted Grafana instances.</li>
+                    <li>Spearheaded the complete, phased migration of all observability tools and data streams to a unified New Relic platform.</li>
+                    <li>Led the architectural design and full lifecycle deployment of Prometheus-Operator across all production environments, implementing over 200+ recording rules for 1000+ high-cardinality metrics, optimizing scrape intervals, and applying extensive relabel_configs.</li>
+                    <li>Debugged and resolved persistent remote write failures and buffer issues with Prometheus sending data to New Relic, collaborating closely with New Relic support.</li>
+                    <li>Reconfigured Fluent Bit (for Kubernetes pods) and Fluentd (for EC2 instances) to directly forward logs to New Relic, eliminating intermediate aggregators.</li>
+                    <li>Implemented distributed tracing and spans with the New Relic Java Agent in Magma, conducting POCs for custom tracing and debugging uninstrumented time.</li>
+                    <li>Orchestrated regional AWS CloudWatch metrics and log streaming to New Relic using Terraform, AWS Kinesis Firehose, and AWS Lambda, ensuring data locality and compliance.</li>
+                    <li>Developed Golang scripts and Google App Scripts (.gs) to automate the analysis and identification of high-cardinality and unused metrics.</li>
+                    <li>Proposed and successfully implemented a "Crew Ownership and Metrics Budgeting" model, assigning clear ownership of metrics to specific engineering teams.</li>
+                    <li>Designed a sophisticated metrics aggregation solution using a custom Kubernetes controller and CRDs.</li>
+                    <li>Established a robust, version-controlled alert creation and governance process by integrating OpsGenie and Jira with Terraform scripts, utilizing GitHub Actions for automated validation.</li>
+                    <li>Automated alert validation processes across New Relic, Slack, and PagerDuty.</li>
+                    <li>Automated observability workflows using Terraform for critical tasks like alert creation, resource cleanup, and Kubernetes cluster backups.</li>
+                    <li>Authored comprehensive internal playbooks for tool deprecations and migrations, created detailed design documents, and conducted extensive training sessions.</li>
+                    <li>Mentored teammates (Pankaj, Krishna, Venu) on complex Terraform and Kustomize configurations.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Estimated annual savings of over <span class="font-semibold text-blue-600">$720K</span> by successfully deprecating legacy components and optimizing data pipelines.</li>
+                    <li>Daily metric ingestion drastically reduced by <span class="font-semibold text-blue-600">85%+</span> (from 20TB to 2TB).</li>
+                    <li>Monthly storage costs cut by <span class="font-semibold text-blue-600">38%</span> (from 256TB to 160TB).</li>
+                    <li>Unique metrics decreased by <span class="font-semibold text-blue-600">33%</span> (8.8K to 5.9K).</li>
+                    <li>Unified New Relic platform provided enhanced system health visibility, significantly reduced alert fatigue, and improved MTTR for incidents.</li>
+                    <li>Operational efficiency boosted significantly through extensive automation of observability workflows.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This was a highly complex, multi-faceted, and ultimately monumental transformation of Highspot's observability landscape. My leadership in driving this initiative, coupled with deep technical expertise in cloud platforms (AWS, GCP), Kubernetes, and a wide array of observability tools, was absolutely critical to its success. The project delivered massive, quantifiable cost savings while simultaneously improving system reliability, operational agility, and the overall developer experience. The strategic implementation of metric ownership, automated governance processes, and robust data pipelines ensures long-term sustainability and positions Highspot for continuous improvement in its operational capabilities. This project truly showcased my ability to lead large-scale technical migrations with a focus on both immediate impact and long-term strategic value.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="projects.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
+                </a>
+                <a href="index.html" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-home"></i> <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Pratik Ghose. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/pratikgh0se" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal HTML Structure -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeContactModal()">&times;</span>
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Get In Touch</h2>
+            <p class="text-lg text-gray-700 text-center mb-6">
+                I am actively seeking challenging opportunities in DevOps, Cloud Engineering, and Site Reliability Engineering.
+                Feel free to connect with me!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:pratikghose1999@gmail.com" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i> <span>pratikghose1999@gmail.com</span>
+                </a>
+                <a href="tel:+917978437436" class="btn-primary flex items-center space-x-2">
+                    <i class="fas fa-phone"></i> <span>+91-7978437436</span>
+                </a>
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" class="btn-primary flex items-center space-x-2">
+                    <i class="fab fa-linkedin"></i> <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>
