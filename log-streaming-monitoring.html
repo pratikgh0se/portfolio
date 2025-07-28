@@ -74,6 +74,454 @@
                 </p>
             </div>
 
+            <div class="detail-section">
+                <h3>System Architecture & Design</h3>
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Real-Time Log Streaming Architecture</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="mermaid-container bg-white p-4 rounded border-2 border-blue-200 mb-4">
+                            <div class="text-sm text-gray-600 mb-2 text-center font-mono">C4 Level 1: Multi-Tenant Log Streaming System</div>
+                            <pre class="mermaid text-xs">
+graph TB
+    subgraph "🏢 Multi-Tenant Applications"
+        App1[🎯 Tenant A<br/>Pods]
+        App2[🎯 Tenant B<br/>Pods]
+        App3[🎯 Tenant C<br/>Pods]
+    end
+    
+    subgraph "📡 Log Collection Layer"
+        FB1[📦 Fluent Bit<br/>DaemonSet]
+        FB2[📦 Fluent Bit<br/>Agent]
+        FB3[📦 Fluentd<br/>EC2 Agent]
+    end
+    
+    subgraph "🔄 Processing Pipeline"
+        Enrich[🏷️ Log Enrichment<br/>Lua Scripts]
+        Filter[🔍 Multi-Tenant<br/>Filtering]
+        Route[🚏 Routing Logic<br/>by Tenant]
+    end
+    
+    subgraph "💾 Storage & Analytics"
+        ES[🔍 Elasticsearch<br/>Clusters]
+        Kibana[📊 Kibana<br/>Dashboards]
+        Alert[🚨 Alert Manager<br/>SLA Monitoring]
+    end
+    
+    App1 --> FB1
+    App2 --> FB2
+    App3 --> FB3
+    
+    FB1 --> Enrich
+    FB2 --> Filter
+    FB3 --> Route
+    
+    Enrich --> ES
+    Filter --> ES
+    Route --> ES
+    
+    ES --> Kibana
+    ES --> Alert
+    
+    style App1 fill:#e3f2fd
+    style App2 fill:#e8f5e8
+    style App3 fill:#fff3e0
+    style ES fill:#f3e5f5
+                            </pre>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Multi-tenant application pods and log sources</li>
+                            <li>Real-time log streaming pipeline and processing</li>
+                            <li>Centralized log aggregation and storage (Kibana/Elasticsearch)</li>
+                            <li>Monitoring, alerting, and SLA tracking systems</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Multi-Tenant Log Processing Design</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="mermaid-container bg-white p-4 rounded border-2 border-green-200 mb-4">
+                            <div class="text-sm text-gray-600 mb-2 text-center font-mono">Tenant Isolation & Processing Flow</div>
+                            <pre class="mermaid text-xs">
+sequenceDiagram
+    participant App as 🎯 Tenant App
+    participant FB as 📦 Fluent Bit
+    participant Lua as 🏷️ Lua Enrichment
+    participant ES as 🔍 Elasticsearch
+    participant Kibana as 📊 Kibana
+    participant SLA as 📈 SLA Monitor
+    
+    App->>FB: Raw Log Stream
+    FB->>Lua: Parse & Extract Metadata
+    Lua->>Lua: Add Tenant Context<br/>Performance Metrics
+    Lua->>ES: Enriched Logs<br/>tenant-{id} Index
+    ES->>Kibana: Real-time Search<br/>Tenant Dashboards
+    ES->>SLA: Analyze Patterns<br/>SLA Violations
+    
+    Note over Lua: Tenant isolation<br/>via index patterns
+    Note over SLA: Proactive alerting<br/>40% faster detection
+                            </pre>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Tenant isolation and log routing mechanisms</li>
+                            <li>Log parsing, enrichment, and standardization</li>
+                            <li>Real-time filtering and anomaly detection</li>
+                            <li>Cloud-neutral deployment across multiple environments</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Observability & Monitoring Integration</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="mermaid-container bg-white p-4 rounded border-2 border-purple-200 mb-4">
+                            <div class="text-sm text-gray-600 mb-2 text-center font-mono">Monitoring & Alerting Architecture</div>
+                            <pre class="mermaid text-xs">
+graph LR
+    subgraph "📊 Visualization Layer"
+        KibanaDash[Kibana Dashboards<br/>Per-Tenant Views]
+        Metrics[📈 Performance<br/>Metrics]
+        Trends[📉 Historical<br/>Trend Analysis]
+    end
+    
+    subgraph "🚨 Alerting System"
+        PatternAlert[Pattern-Based<br/>Alerts]
+        SLAAlert[SLA Violation<br/>Detection]
+        AnomalyAlert[Anomaly<br/>Detection]
+    end
+    
+    subgraph "👥 Operations Teams"
+        SRE[SRE Team]
+        DevOps[DevOps Team]
+        Support[Customer Support]
+    end
+    
+    KibanaDash --> PatternAlert
+    Metrics --> SLAAlert
+    Trends --> AnomalyAlert
+    
+    PatternAlert --> SRE
+    SLAAlert --> DevOps
+    AnomalyAlert --> Support
+    
+    style KibanaDash fill:#2196f3
+    style PatternAlert fill:#ff5722
+    style SRE fill:#4caf50
+                            </pre>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Real-time dashboard creation and visualization</li>
+                            <li>Proactive incident detection and alerting</li>
+                            <li>Tenant-specific SLA monitoring and reporting</li>
+                            <li>Performance metrics and capacity planning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-blue-800 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <strong>Technical Note:</strong> Architecture provides real-time, cloud-neutral log streaming with comprehensive tenant isolation and proactive monitoring capabilities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Technical Implementation & Code Samples</h3>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Fluent Bit Configuration for Multi-Tenant Logging</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code># Fluent Bit configuration for tenant-aware log streaming
+[SERVICE]
+    Flush         1
+    Log_Level     info
+    Daemon        off
+    Parsers_File  parsers.conf
+    HTTP_Server   On
+    HTTP_Listen   0.0.0.0
+    HTTP_Port     2020
+
+[INPUT]
+    Name              tail
+    Tag               tenant.*
+    Path              /var/log/containers/*thoughtspot*.log
+    Path_Key          filename
+    Parser            docker
+    DB                /var/log/fluentbit.db
+    Mem_Buf_Limit     50MB
+    Skip_Long_Lines   On
+    Refresh_Interval  10
+
+[FILTER]
+    Name         kubernetes
+    Match        tenant.*
+    Kube_URL     https://kubernetes.default.svc:443
+    Kube_CA_File /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    Kube_Token_File /var/run/secrets/kubernetes.io/serviceaccount/token
+    Merge_Log    On
+    K8S-Logging.Parser  On
+    K8S-Logging.Exclude Off
+
+[FILTER]
+    Name         modify
+    Match        tenant.*
+    Add          tenant_id ${TENANT_ID}
+    Add          environment ${ENVIRONMENT}
+    Add          cluster_name ${CLUSTER_NAME}
+
+[FILTER]
+    Name         lua
+    Match        tenant.*
+    Script       tenant_enrichment.lua
+    Call         enrich_tenant_data
+
+[OUTPUT]
+    Name         es
+    Match        tenant.*
+    Host         ${ES_HOST}
+    Port         ${ES_PORT}
+    Index        thoughtspot-logs-${TENANT_ID}
+    Type         _doc
+    HTTP_User    ${ES_USER}
+    HTTP_Passwd  ${ES_PASSWORD}
+    Logstash_Format On
+    Logstash_Prefix thoughtspot-${TENANT_ID}
+    Retry_Limit  False
+    Suppress_Type_Name On</code></pre>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Tenant Log Enrichment Script (Lua)</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code>-- Lua script for tenant-specific log enrichment
+function enrich_tenant_data(tag, timestamp, record)
+    -- Extract tenant information from Kubernetes metadata
+    local tenant_id = record["kubernetes"]["labels"]["tenant"]
+    local service_name = record["kubernetes"]["labels"]["app"]
+    local namespace = record["kubernetes"]["namespace_name"]
+    
+    -- Add tenant context
+    record["tenant"] = {
+        id = tenant_id or "unknown",
+        service = service_name or "unknown",
+        namespace = namespace or "default"
+    }
+    
+    -- Parse and categorize log levels
+    local log_message = record["log"] or ""
+    local log_level = "INFO"
+    
+    if string.match(log_message, "%[ERROR%]") or 
+       string.match(log_message, "ERROR") then
+        log_level = "ERROR"
+    elseif string.match(log_message, "%[WARN%]") or 
+           string.match(log_message, "WARN") then
+        log_level = "WARN"
+    elseif string.match(log_message, "%[DEBUG%]") then
+        log_level = "DEBUG"
+    end
+    
+    record["log_level"] = log_level
+    
+    -- Extract structured data from log message
+    local request_id = string.match(log_message, "request_id:([%w%-]+)")
+    if request_id then
+        record["request_id"] = request_id
+    end
+    
+    local response_time = string.match(log_message, "response_time:(%d+%.?%d*)")
+    if response_time then
+        record["response_time_ms"] = tonumber(response_time)
+    end
+    
+    -- Add performance indicators
+    if record["response_time_ms"] and record["response_time_ms"] > 5000 then
+        record["performance_alert"] = "slow_response"
+    end
+    
+    -- Add timestamp for better querying
+    record["@timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S.000Z", timestamp)
+    
+    return 1, timestamp, record
+end</code></pre>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Kubernetes DaemonSet for Log Collection</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code># Kubernetes DaemonSet for tenant-aware log collection
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: tenant-log-collector
+  namespace: logging
+  labels:
+    app: tenant-log-collector
+spec:
+  selector:
+    matchLabels:
+      app: tenant-log-collector
+  template:
+    metadata:
+      labels:
+        app: tenant-log-collector
+    spec:
+      serviceAccount: fluent-bit
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: fluent-bit
+        image: fluent/fluent-bit:2.1.8
+        ports:
+        - containerPort: 2020
+        env:
+        - name: ES_HOST
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch-credentials
+              key: host
+        - name: ES_USER
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch-credentials
+              key: username
+        - name: ES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch-credentials
+              key: password
+        - name: ENVIRONMENT
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: CLUSTER_NAME
+          value: "thoughtspot-production"
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+        - name: fluent-bit-config
+          mountPath: /fluent-bit/etc/
+        resources:
+          limits:
+            memory: 200Mi
+            cpu: 100m
+          requests:
+            memory: 100Mi
+            cpu: 50m
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
+      - name: fluent-bit-config
+        configMap:
+          name: fluent-bit-config</code></pre>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-800 mb-2">
+                            <i class="fab fa-github mr-2"></i>Repository Links
+                        </h5>
+                        <ul class="text-blue-700 text-sm space-y-1">
+                            <li><a href="#" class="hover:underline">→ Fluent Bit Multi-Tenant Configuration</a></li>
+                            <li><a href="#" class="hover:underline">→ Kubernetes Log Collection DaemonSets</a></li>
+                            <li><a href="#" class="hover:underline">→ Tenant Log Enrichment Scripts</a></li>
+                            <li><a href="#" class="hover:underline">→ Elasticsearch Index Management</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-800 mb-2">
+                            <i class="fas fa-file-code mr-2"></i>Technical Documentation
+                        </h5>
+                        <ul class="text-green-700 text-sm space-y-1">
+                            <li><a href="#" class="hover:underline">→ Multi-Tenant Logging Architecture</a></li>
+                            <li><a href="#" class="hover:underline">→ Real-Time Stream Processing Guide</a></li>
+                            <li><a href="#" class="hover:underline">→ Observability Best Practices</a></li>
+                            <li><a href="#" class="hover:underline">→ Tenant SLA Monitoring Procedures</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Development Practices & Quality Assurance</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                            <i class="fas fa-vial mr-2 text-purple-600"></i>Stream Processing Testing
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-purple-50 p-3 rounded">
+                                <h5 class="font-medium text-purple-800">Data Pipeline Testing</h5>
+                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
+                                    <li>• End-to-end log flow validation and testing</li>
+                                    <li>• Tenant isolation and data integrity verification</li>
+                                    <li>• Performance testing with high-volume log streams</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-3 rounded">
+                                <h5 class="font-medium text-purple-800">Real-Time Monitoring Testing</h5>
+                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
+                                    <li>• Proactive incident detection accuracy testing</li>
+                                    <li>• SLA monitoring and alerting validation</li>
+                                    <li>• Dashboard functionality and visualization testing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                            <i class="fab fa-git-alt mr-2 text-orange-600"></i>Observability Operations
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-orange-50 p-3 rounded">
+                                <h5 class="font-medium text-orange-800">Deployment & Scaling</h5>
+                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
+                                    <li>• Cloud-neutral deployment automation</li>
+                                    <li>• Auto-scaling based on log volume</li>
+                                    <li>• Multi-environment configuration management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-3 rounded">
+                                <h5 class="font-medium text-orange-800">Operational Excellence</h5>
+                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
+                                    <li>• 24/7 monitoring and incident response</li>
+                                    <li>• Capacity planning and resource optimization</li>
+                                    <li>• Cross-team collaboration and training</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                        <i class="fas fa-shield-alt mr-2 text-green-600"></i>Operational Impact Metrics
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">40%</div>
+                            <div class="text-sm text-gray-600">Faster Incident Detection</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">30%</div>
+                            <div class="text-sm text-gray-600">Reduced Debugging Time</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">100%</div>
+                            <div class="text-sm text-gray-600">Real-Time Visibility</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mt-8 flex justify-center space-x-4">
                 <a href="projects.html" class="btn-primary flex items-center space-x-2">
                     <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
@@ -91,6 +539,18 @@
     <!-- Placeholder for Contact Modal HTML Structure - REPLACED EXISTING MODAL -->
     <div id="contact-modal-placeholder"></div>
 
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: 12
+        });
+    </script>
+    
     <!-- Link to external JavaScript file -->
     <script src="js/main.js"></script>
 </body>

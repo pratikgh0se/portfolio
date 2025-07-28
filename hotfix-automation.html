@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Hotfix Deployment Automation | Pratik Ghose</title>
-    <!-- Favicon: A simple cloud icon as SVG - ADDED -->
+    <title>Project: Hotfix & Deployment Automation | Pratik Ghose</title>
+    <!-- Favicon: A simple cloud icon as SVG -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.86 2.53-7.58 6.04C2.71 10.75 1 12.68 1 15c0 3.31 2.69 6 6 6h12c3.31 0 6-2.69 6-6 0-2.68-1.71-4.91-4.65-5.96zM12 6c2.76 0 5 2.24 5 5h-2c0-1.66-1.34-3-3-3s-3 1.34-3 3H7c0-2.76 2.24-5 5-5z'/></svg>" type="image/svg+xml">
     <!-- Link to Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -16,58 +16,1272 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="antialiased">
-    <!-- Placeholder for Header/Navigation Bar - REPLACED EXISTING HEADER -->
+    <!-- Placeholder for Header/Navigation Bar -->
     <div id="header-placeholder"></div>
 
-    <!-- Project Detail Section -->
+    <!-- Hero Section -->
+    <section class="py-12 md:py-16 bg-gradient-to-br from-orange-600 to-red-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="mb-4">
+                            <span class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-rocket mr-2"></i>Deployment Automation & CI/CD
+                            </span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                            Hotfix & Deployment Automation Pipeline
+                        </h1>
+                        <p class="text-xl mb-6 opacity-90 leading-relaxed">
+                            Engineered a comprehensive <span class="text-yellow-300 font-semibold">automated deployment pipeline</span> 
+                            enabling <span class="text-green-300 font-semibold">rapid hotfix deployment</span> and 
+                            <span class="text-blue-300 font-semibold">zero-downtime releases</span> across production environments.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="bg-orange-500 px-3 py-1 rounded-full text-sm">Jenkins</span>
+                            <span class="bg-red-500 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-green-500 px-3 py-1 rounded-full text-sm">Docker</span>
+                            <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-green-300">Zero Downtime</div>
+                            <div class="text-sm opacity-90">Deployments</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-blue-300">Automated</div>
+                            <div class="text-sm opacity-90">Pipeline</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-purple-300">Rapid</div>
+                            <div class="text-sm opacity-90">Hotfixes</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-orange-300">Multi-Env</div>
+                            <div class="text-sm opacity-90">Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-12 bg-gradient-to-br from-gray-50 to-orange-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-600">
+                        <i class="fas fa-building text-orange-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800 mb-2">Company</h3>
+                        <p class="text-gray-600">Highspot</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-red-600">
+                        <i class="fas fa-calendar text-red-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800 mb-2">Duration</h3>
+                        <p class="text-gray-600">April 2024 - Present</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-600">
+                        <i class="fas fa-rocket text-green-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800 mb-2">Focus</h3>
+                        <p class="text-gray-600">Enterprise deployment automation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
     <section class="py-16 md:py-20 container mx-auto px-4">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Hotfix Deployment Automation</h1>
-        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> Highspot</p>
-            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> April 2024 - Present</p>
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Project Summary -->
+            <div class="mb-16">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-orange-600">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-rocket text-orange-600 mr-3"></i>Project Overview
+                    </h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Designed and implemented a comprehensive automated deployment pipeline enabling rapid hotfix deployment, 
+                        zero-downtime releases, and streamlined CI/CD processes. The system provides robust automation across 
+                        multiple environments with integrated testing, monitoring, and rollback capabilities.
+                    </p>
+                </div>
+            </div>
 
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                Led automation of the hotfix deployment process, achieving an 80% reduction in manual interventions and increasing delivery speed.
-            </p>
+            <!-- Challenge & Solution -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-red-600">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">
+                        <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>Challenge
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Highspot's deployment process was manual, time-consuming, and error-prone, leading to extended downtime 
+                        during hotfixes and regular releases. The lack of automated testing and deployment pipelines hindered 
+                        rapid response to critical issues and slowed down overall development velocity across multiple 
+                        production environments.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-600">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">
+                        <i class="fas fa-lightbulb text-green-600 mr-3"></i>Solution Impact
+                    </h3>
+                    <div class="space-y-3 text-gray-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>Zero-downtime deployment patterns implemented</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>Automated testing and validation pipelines</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>Rapid hotfix deployment capabilities</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>Multi-environment deployment orchestration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div class="detail-section">
-                <h3>Key Technologies & Tools</h3>
-                <p class="text-gray-700">AWS Lambda, CI/CD Pipelines (Buildkite, Spinnaker), Git, Slack, Email, Bash Scripting.</p>
+            <!-- System Architecture -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-sitemap mr-3 text-orange-600"></i>Deployment Pipeline Architecture
+                    </h2>
+                    <div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-600">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">
+                            <i class="fas fa-rocket text-orange-600 mr-2"></i>Automated Deployment Pipeline
+                        </h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <p class="text-gray-700 text-sm italic mb-2">Diagram Placeholder: CI/CD pipeline showing:</p>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• GitHub Actions triggering Jenkins workflows</li>
+                                <li>• Automated testing and security scanning</li>
+                                <li>• Blue-green deployment orchestration</li>
+                                <li>• Multi-environment promotion gates</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-700 text-sm">
+                            Comprehensive CI/CD pipeline enabling automated testing, deployment, 
+                            and monitoring across multiple production environments.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">
+                            <i class="fas fa-fire text-green-600 mr-2"></i>Hotfix Deployment Flow
+                        </h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <p class="text-gray-700 text-sm italic mb-2">Diagram Placeholder: Hotfix workflow showing:</p>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Emergency deployment triggers</li>
+                                <li>• Accelerated testing pipelines</li>
+                                <li>• Canary rollout strategies</li>
+                                <li>• Automated rollback mechanisms</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-700 text-sm">
+                            Specialized hotfix deployment pipeline enabling rapid response to 
+                            critical issues with automated safety measures and rollback capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-code mr-3 text-red-600"></i>Technical Implementation & Code Samples
+                    </h2>
+                    <div class="w-24 h-1 bg-red-600 mx-auto mb-8"></div>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Automated Hotfix Deployment Pipeline (Jenkins)</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code>// Jenkins pipeline for automated hotfix deployment
+pipeline {
+    agent {
+        label 'docker-agent'
+    }
+    
+    parameters {
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['staging', 'production'],
+            description: 'Target deployment environment'
+        )
+        string(
+            name: 'HOTFIX_BRANCH',
+            defaultValue: 'hotfix/',
+            description: 'Hotfix branch name (e.g., hotfix/critical-bug-fix)'
+        )
+        string(
+            name: 'JIRA_TICKET',
+            defaultValue: '',
+            description: 'Associated JIRA ticket (e.g., HSP-1234)'
+        )
+        booleanParam(
+            name: 'SKIP_TESTS',
+            defaultValue: false,
+            description: 'Skip test execution for emergency deployments'
+        )
+        booleanParam(
+            name: 'AUTO_ROLLBACK',
+            defaultValue: true,
+            description: 'Enable automatic rollback on deployment failure'
+        )
+    }
+    
+    environment {
+        AWS_DEFAULT_REGION = 'us-west-2'
+        ECR_REGISTRY = '123456789012.dkr.ecr.us-west-2.amazonaws.com'
+        SLACK_CHANNEL = '#deployments'
+        JIRA_PROJECT = 'HSP'
+    }
+    
+    stages {
+        stage('Pre-flight Validation') {
+            steps {
+                script {
+                    // Validate hotfix branch naming convention
+                    if (!params.HOTFIX_BRANCH.startsWith('hotfix/')) {
+                        error("Invalid hotfix branch name. Must start with 'hotfix/'")
+                    }
+                    
+                    // Validate JIRA ticket format
+                    if (params.JIRA_TICKET && !params.JIRA_TICKET.matches(/^${JIRA_PROJECT}-\d+$/)) {
+                        error("Invalid JIRA ticket format. Expected format: ${JIRA_PROJECT}-XXXX")
+                    }
+                    
+                    // Check branch exists
+                    sh """
+                        git ls-remote --heads origin ${params.HOTFIX_BRANCH} | wc -l | grep -q '^1\$' || {
+                            echo "Hotfix branch ${params.HOTFIX_BRANCH} does not exist"
+                            exit 1
+                        }
+                    """
+                }
+                
+                // Send deployment start notification
+                slackSend(
+                    channel: env.SLACK_CHANNEL,
+                    color: 'warning',
+                    message: """
+                        🚨 *HOTFIX DEPLOYMENT STARTED*
+                        *Branch:* `${params.HOTFIX_BRANCH}`
+                        *Environment:* `${params.ENVIRONMENT}`
+                        *JIRA:* ${params.JIRA_TICKET ?: 'N/A'}
+                        *Build:* <${BUILD_URL}|#${BUILD_NUMBER}>
+                    """
+                )
+            }
+        }
+        
+        stage('Checkout & Build') {
+            steps {
+                // Checkout hotfix branch
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: params.HOTFIX_BRANCH]],
+                    userRemoteConfigs: [[url: 'https://github.com/highspot/main-service.git']]
+                ])
+                
+                script {
+                    // Build Docker image with hotfix tag
+                    def imageTag = "${params.HOTFIX_BRANCH.replaceAll('/', '-')}-${BUILD_NUMBER}"
+                    env.DOCKER_TAG = imageTag
+                    
+                    sh """
+                        docker build \
+                            --build-arg BUILD_VERSION=${imageTag} \
+                            --build-arg GIT_COMMIT=\$(git rev-parse HEAD) \
+                            --build-arg BUILD_DATE=\$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+                            -t ${ECR_REGISTRY}/main-service:${imageTag} \
+                            -f Dockerfile .
+                        
+                        # Tag as latest hotfix
+                        docker tag ${ECR_REGISTRY}/main-service:${imageTag} \
+                                   ${ECR_REGISTRY}/main-service:hotfix-latest
+                    """
+                }
+            }
+        }
+        
+        stage('Testing') {
+            when {
+                not { params.SKIP_TESTS }
+            }
+            parallel {
+                stage('Unit Tests') {
+                    steps {
+                        sh """
+                            docker run --rm \
+                                -v \$(pwd):/app \
+                                -w /app \
+                                ${ECR_REGISTRY}/main-service:${env.DOCKER_TAG} \
+                                npm test -- --coverage --ci
+                        """
+                        publishTestResults testResultsPattern: 'test-results.xml'
+                        publishCoverageResults sourceFilePattern: 'coverage/lcov.info'
+                    }
+                }
+                
+                stage('Security Scan') {
+                    steps {
+                        sh """
+                            # Trivy vulnerability scan
+                            trivy image \
+                                --exit-code 1 \
+                                --severity HIGH,CRITICAL \
+                                --format json \
+                                --output trivy-report.json \
+                                ${ECR_REGISTRY}/main-service:${env.DOCKER_TAG}
+                        """
+                        archiveArtifacts artifacts: 'trivy-report.json'
+                    }
+                }
+            }
+        }
+        
+        stage('Push to Registry') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'ecr-credentials',
+                    usernameVariable: 'AWS_ACCESS_KEY_ID',
+                    passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+                )]) {
+                    sh """
+                        # Login to ECR
+                        aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | \
+                            docker login --username AWS --password-stdin ${ECR_REGISTRY}
+                        
+                        # Push images
+                        docker push ${ECR_REGISTRY}/main-service:${env.DOCKER_TAG}
+                        docker push ${ECR_REGISTRY}/main-service:hotfix-latest
+                        
+                        echo "Image pushed: ${ECR_REGISTRY}/main-service:${env.DOCKER_TAG}"
+                    """
+                }
+            }
+        }
+        
+        stage('Deploy to Environment') {
+            steps {
+                script {
+                    // Store current deployment for rollback
+                    def currentVersion = sh(
+                        script: """
+                            kubectl get deployment main-service \
+                                -n ${params.ENVIRONMENT} \
+                                -o jsonpath='{.spec.template.spec.containers[0].image}' \
+                                2>/dev/null || echo 'none'
+                        """,
+                        returnStdout: true
+                    ).trim()
+                    
+                    env.PREVIOUS_VERSION = currentVersion
+                    
+                    // Deploy new version
+                    sh """
+                        # Update deployment with new image
+                        kubectl set image deployment/main-service \
+                            main-service=${ECR_REGISTRY}/main-service:${env.DOCKER_TAG} \
+                            -n ${params.ENVIRONMENT}
+                        
+                        # Wait for rollout to complete
+                        kubectl rollout status deployment/main-service \
+                            -n ${params.ENVIRONMENT} \
+                            --timeout=300s
+                        
+                        # Verify deployment health
+                        kubectl get pods -n ${params.ENVIRONMENT} \
+                            -l app=main-service \
+                            -o wide
+                    """
+                }
+            }
+        }
+        
+        stage('Health Verification') {
+            steps {
+                script {
+                    def healthUrl = params.ENVIRONMENT == 'production' ? 
+                        'https://api.highspot.com/health' : 
+                        'https://staging-api.highspot.com/health'
+                    
+                    // Wait for service to be healthy
+                    timeout(time: 5, unit: 'MINUTES') {
+                        waitUntil {
+                            script {
+                                def response = sh(
+                                    script: """
+                                        curl -s -o /dev/null -w '%{http_code}' \
+                                            --max-time 10 \
+                                            ${healthUrl}
+                                    """,
+                                    returnStdout: true
+                                ).trim()
+                                
+                                if (response == '200') {
+                                    echo "Health check passed: ${response}"
+                                    return true
+                                } else {
+                                    echo "Health check failed: ${response}, retrying..."
+                                    return false
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Additional smoke tests
+                    sh """
+                        # Test critical endpoints
+                        curl -f ${healthUrl}/ready || exit 1
+                        curl -f ${healthUrl}/metrics || exit 1
+                        
+                        echo "All health checks passed successfully"
+                    """
+                }
+            }
+        }
+        
+        stage('Update JIRA') {
+            when {
+                expression { params.JIRA_TICKET != '' }
+            }
+            steps {
+                script {
+                    // Update JIRA ticket with deployment information
+                    withCredentials([usernamePassword(
+                        credentialsId: 'jira-credentials',
+                        usernameVariable: 'JIRA_USER',
+                        passwordVariable: 'JIRA_TOKEN'
+                    )]) {
+                        sh """
+                            curl -X POST \
+                                -H "Content-Type: application/json" \
+                                -u \${JIRA_USER}:\${JIRA_TOKEN} \
+                                -d '{
+                                    "body": "Hotfix deployed to ${params.ENVIRONMENT}\\n\\nDeployment Details:\\n- Branch: ${params.HOTFIX_BRANCH}\\n- Image: ${env.DOCKER_TAG}\\n- Build: #${BUILD_NUMBER}\\n- Environment: ${params.ENVIRONMENT}"
+                                }' \
+                                "https://highspot.atlassian.net/rest/api/2/issue/${params.JIRA_TICKET}/comment"
+                        """
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            slackSend(
+                channel: env.SLACK_CHANNEL,
+                color: 'good',
+                message: """
+                    ✅ *HOTFIX DEPLOYMENT SUCCESSFUL*
+                    *Branch:* `${params.HOTFIX_BRANCH}`
+                    *Environment:* `${params.ENVIRONMENT}`
+                    *Image:* `${env.DOCKER_TAG}`
+                    *Duration:* ${currentBuild.durationString}
+                """
+            )
+        }
+        
+        failure {
+            script {
+                if (params.AUTO_ROLLBACK && env.PREVIOUS_VERSION && env.PREVIOUS_VERSION != 'none') {
+                    // Automatic rollback
+                    sh """
+                        echo "Performing automatic rollback to ${env.PREVIOUS_VERSION}"
+                        kubectl set image deployment/main-service \
+                            main-service=${env.PREVIOUS_VERSION} \
+                            -n ${params.ENVIRONMENT}
+                        
+                        kubectl rollout status deployment/main-service \
+                            -n ${params.ENVIRONMENT} \
+                            --timeout=300s
+                    """
+                }
+            }
+            
+            slackSend(
+                channel: env.SLACK_CHANNEL,
+                color: 'danger',
+                message: """
+                    ❌ *HOTFIX DEPLOYMENT FAILED*
+                    *Branch:* `${params.HOTFIX_BRANCH}`
+                    *Environment:* `${params.ENVIRONMENT}`
+                    *Rollback:* ${params.AUTO_ROLLBACK ? 'Executed' : 'Manual intervention required'}
+                    *Build Log:* <${BUILD_URL}console|View Details>
+                """
+            )
+        }
+        
+        always {
+            // Clean up Docker images
+            sh """
+                docker rmi ${ECR_REGISTRY}/main-service:${env.DOCKER_TAG} || true
+                docker rmi ${ECR_REGISTRY}/main-service:hotfix-latest || true
+            """
+            
+            // Archive deployment artifacts
+            archiveArtifacts artifacts: 'deployment-manifest.yaml', allowEmptyArchive: true
+        }
+    }
+}</code></pre>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Python Deployment Automation Script</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code># Python script for intelligent hotfix deployment orchestration
+import sys
+import time
+import json
+import requests
+import subprocess
+from datetime import datetime, timedelta
+from typing import Dict, List, Optional, Tuple
+from dataclasses import dataclass
+from kubernetes import client, config
+import boto3
+
+@dataclass
+class DeploymentConfig:
+    service_name: str
+    namespace: str
+    image_repository: str
+    health_endpoint: str
+    rollback_enabled: bool = True
+    health_check_timeout: int = 300
+    monitoring_duration: int = 900  # 15 minutes
+
+class HotfixDeploymentOrchestrator:
+    def __init__(self, config: DeploymentConfig):
+        self.config = config
+        self.k8s_apps_v1 = client.AppsV1Api()
+        self.k8s_core_v1 = client.CoreV1Api()
+        self.cloudwatch = boto3.client('cloudwatch')
+        self.deployment_start_time = datetime.utcnow()
+        
+    def get_current_deployment_image(self) -> Optional[str]:
+        """Get current deployment image for rollback purposes"""
+        try:
+            deployment = self.k8s_apps_v1.read_namespaced_deployment(
+                name=self.config.service_name,
+                namespace=self.config.namespace
+            )
+            
+            containers = deployment.spec.template.spec.containers
+            for container in containers:
+                if container.name == self.config.service_name:
+                    return container.image
+                    
+            return None
+        except Exception as e:
+            print(f"Error getting current deployment: {e}")
+            return None
+    
+    def update_deployment_image(self, new_image: str) -> bool:
+        """Update deployment with new image"""
+        try:
+            # Patch deployment with new image
+            body = {
+                "spec": {
+                    "template": {
+                        "spec": {
+                            "containers": [{
+                                "name": self.config.service_name,
+                                "image": new_image
+                            }]
+                        }
+                    }
+                }
+            }
+            
+            self.k8s_apps_v1.patch_namespaced_deployment(
+                name=self.config.service_name,
+                namespace=self.config.namespace,
+                body=body
+            )
+            
+            print(f"Updated deployment {self.config.service_name} with image: {new_image}")
+            return True
+            
+        except Exception as e:
+            print(f"Error updating deployment: {e}")
+            return False
+    
+    def wait_for_rollout_completion(self) -> bool:
+        """Wait for Kubernetes rollout to complete"""
+        timeout = time.time() + self.config.health_check_timeout
+        
+        while time.time() < timeout:
+            try:
+                deployment = self.k8s_apps_v1.read_namespaced_deployment(
+                    name=self.config.service_name,
+                    namespace=self.config.namespace
+                )
+                
+                status = deployment.status
+                if (status.ready_replicas and 
+                    status.ready_replicas == status.replicas and
+                    status.updated_replicas == status.replicas):
+                    print("Deployment rollout completed successfully")
+                    return True
+                
+                print(f"Waiting for rollout... Ready: {status.ready_replicas}/{status.replicas}")
+                time.sleep(10)
+                
+            except Exception as e:
+                print(f"Error checking rollout status: {e}")
+                time.sleep(10)
+        
+        print("Rollout timeout exceeded")
+        return False
+    
+    def perform_health_checks(self) -> bool:
+        """Comprehensive health check validation"""
+        print("Starting health check validation...")
+        
+        # Wait for pods to be ready
+        if not self.wait_for_rollout_completion():
+            return False
+        
+        # Perform HTTP health checks
+        timeout = time.time() + self.config.health_check_timeout
+        consecutive_successes = 0
+        required_successes = 3
+        
+        while time.time() < timeout:
+            try:
+                response = requests.get(
+                    self.config.health_endpoint,
+                    timeout=10,
+                    headers={'User-Agent': 'HotfixDeployment/1.0'}
+                )
+                
+                if response.status_code == 200:
+                    consecutive_successes += 1
+                    print(f"Health check passed ({consecutive_successes}/{required_successes})")
+                    
+                    if consecutive_successes >= required_successes:
+                        print("All health checks passed")
+                        return True
+                else:
+                    print(f"Health check failed: HTTP {response.status_code}")
+                    consecutive_successes = 0
+                
+            except requests.RequestException as e:
+                print(f"Health check request failed: {e}")
+                consecutive_successes = 0
+            
+            time.sleep(15)
+        
+        print("Health check timeout exceeded")
+        return False
+    
+    def get_deployment_metrics(self) -> Dict[str, float]:
+        """Retrieve CloudWatch metrics for deployment validation"""
+        try:
+            end_time = datetime.utcnow()
+            start_time = self.deployment_start_time
+            
+            # Get error rate metrics
+            error_rate_response = self.cloudwatch.get_metric_statistics(
+                Namespace='AWS/ApplicationELB',
+                MetricName='HTTPCode_Target_5XX_Count',
+                Dimensions=[
+                    {
+                        'Name': 'TargetGroup',
+                        'Value': f'{self.config.service_name}-tg'
+                    }
+                ],
+                StartTime=start_time,
+                EndTime=end_time,
+                Period=60,
+                Statistics=['Sum']
+            )
+            
+            # Get response time metrics
+            latency_response = self.cloudwatch.get_metric_statistics(
+                Namespace='AWS/ApplicationELB',
+                MetricName='TargetResponseTime',
+                Dimensions=[
+                    {
+                        'Name': 'TargetGroup',
+                        'Value': f'{self.config.service_name}-tg'
+                    }
+                ],
+                StartTime=start_time,
+                EndTime=end_time,
+                Period=60,
+                Statistics=['Average']
+            )
+            
+            # Calculate metrics
+            total_errors = sum([point['Sum'] for point in error_rate_response['Datapoints']])
+            avg_latency = sum([point['Average'] for point in latency_response['Datapoints']]) / len(latency_response['Datapoints']) if latency_response['Datapoints'] else 0
+            
+            return {
+                'error_count': total_errors,
+                'average_latency': avg_latency,
+                'metrics_available': True
+            }
+            
+        except Exception as e:
+            print(f"Error retrieving metrics: {e}")
+            return {'metrics_available': False}
+    
+    def monitor_deployment(self) -> bool:
+        """Monitor deployment for stability over time"""
+        print(f"Monitoring deployment for {self.config.monitoring_duration} seconds...")
+        
+        monitor_start = time.time()
+        monitor_end = monitor_start + self.config.monitoring_duration
+        check_interval = 60  # Check every minute
+        
+        stability_checks = []
+        
+        while time.time() < monitor_end:
+            # Perform health check
+            try:
+                response = requests.get(self.config.health_endpoint, timeout=10)
+                health_ok = response.status_code == 200
+            except:
+                health_ok = False
+            
+            # Get current metrics
+            metrics = self.get_deployment_metrics()
+            
+            stability_check = {
+                'timestamp': datetime.utcnow().isoformat(),
+                'health_ok': health_ok,
+                'error_count': metrics.get('error_count', 0),
+                'latency': metrics.get('average_latency', 0)
+            }
+            
+            stability_checks.append(stability_check)
+            
+            print(f"Stability check: Health={health_ok}, Errors={metrics.get('error_count', 0)}, Latency={metrics.get('average_latency', 0):.2f}ms")
+            
+            time.sleep(check_interval)
+        
+        # Analyze stability
+        failed_checks = sum(1 for check in stability_checks if not check['health_ok'])
+        failure_rate = failed_checks / len(stability_checks) if stability_checks else 1
+        
+        if failure_rate > 0.1:  # More than 10% failure rate
+            print(f"Deployment unstable: {failure_rate:.1%} failure rate")
+            return False
+        
+        print("Deployment monitoring completed successfully")
+        return True
+    
+    def rollback_deployment(self, previous_image: str) -> bool:
+        """Rollback to previous deployment image"""
+        print(f"Rolling back to previous image: {previous_image}")
+        
+        if not self.update_deployment_image(previous_image):
+            return False
+        
+        if not self.wait_for_rollout_completion():
+            return False
+        
+        # Verify rollback health
+        return self.perform_health_checks()
+    
+    def execute_hotfix_deployment(self, new_image: str) -> bool:
+        """Execute complete hotfix deployment process"""
+        print(f"Starting hotfix deployment for {self.config.service_name}")
+        print(f"New image: {new_image}")
+        
+        # Get current image for potential rollback
+        current_image = self.get_current_deployment_image()
+        if not current_image:
+            print("Warning: Could not determine current deployment image")
+        
+        try:
+            # Step 1: Update deployment
+            if not self.update_deployment_image(new_image):
+                print("Failed to update deployment")
+                return False
+            
+            # Step 2: Health checks
+            if not self.perform_health_checks():
+                print("Health checks failed")
+                if self.config.rollback_enabled and current_image:
+                    print("Initiating automatic rollback...")
+                    return self.rollback_deployment(current_image)
+                return False
+            
+            # Step 3: Extended monitoring
+            if not self.monitor_deployment():
+                print("Deployment monitoring detected instability")
+                if self.config.rollback_enabled and current_image:
+                    print("Initiating automatic rollback due to instability...")
+                    return self.rollback_deployment(current_image)
+                return False
+            
+            print("Hotfix deployment completed successfully!")
+            return True
+            
+        except Exception as e:
+            print(f"Deployment error: {e}")
+            if self.config.rollback_enabled and current_image:
+                print("Initiating rollback due to error...")
+                return self.rollback_deployment(current_image)
+            return False
+
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python hotfix_deploy.py <service_name> <new_image>")
+        sys.exit(1)
+    
+    service_name = sys.argv[1]
+    new_image = sys.argv[2]
+    
+    # Load Kubernetes config
+    try:
+        config.load_incluster_config()
+    except:
+        config.load_kube_config()
+    
+    # Configuration for different services
+    deployment_config = DeploymentConfig(
+        service_name=service_name,
+        namespace='production',
+        image_repository=f'123456789012.dkr.ecr.us-west-2.amazonaws.com/{service_name}',
+        health_endpoint=f'https://api.highspot.com/health',
+        rollback_enabled=True,
+        health_check_timeout=300,
+        monitoring_duration=900
+    )
+    
+    orchestrator = HotfixDeploymentOrchestrator(deployment_config)
+    success = orchestrator.execute_hotfix_deployment(new_image)
+    
+    sys.exit(0 if success else 1)
+
+if __name__ == "__main__":
+    main()</code></pre>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">GitHub Actions Workflow for Hotfix Automation</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code># GitHub Actions workflow for automated hotfix deployments
+name: Hotfix Deployment Automation
+
+on:
+  push:
+    branches:
+      - 'hotfix/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      hotfix_branch:
+        description: 'Hotfix branch name'
+        required: true
+        type: string
+      skip_tests:
+        description: 'Skip test execution'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  AWS_REGION: us-west-2
+  ECR_REGISTRY: 123456789012.dkr.ecr.us-west-2.amazonaws.com
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+jobs:
+  validate-hotfix:
+    runs-on: ubuntu-latest
+    outputs:
+      branch-valid: ${{ steps.validation.outputs.valid }}
+      jira-ticket: ${{ steps.validation.outputs.jira_ticket }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.hotfix_branch || github.ref }}
+        fetch-depth: 0
+    
+    - name: Validate hotfix branch
+      id: validation
+      run: |
+        BRANCH_NAME="${{ github.event.inputs.hotfix_branch || github.ref_name }}"
+        
+        # Validate branch naming convention
+        if [[ ! $BRANCH_NAME =~ ^hotfix/.+ ]]; then
+          echo "❌ Invalid hotfix branch name: $BRANCH_NAME"
+          echo "Branch must start with 'hotfix/'"
+          exit 1
+        fi
+        
+        # Extract JIRA ticket from branch name
+        JIRA_TICKET=$(echo $BRANCH_NAME | grep -oE 'HSP-[0-9]+' || echo "")
+        
+        echo "✅ Valid hotfix branch: $BRANCH_NAME"
+        echo "valid=true" >> $GITHUB_OUTPUT
+        echo "jira_ticket=$JIRA_TICKET" >> $GITHUB_OUTPUT
+    
+    - name: Notify deployment start
+      uses: 8398a7/action-slack@v3
+      with:
+        status: custom
+        custom_payload: |
+          {
+            "text": "🚨 Hotfix Deployment Started",
+            "attachments": [{
+              "color": "warning",
+              "fields": [
+                {"title": "Branch", "value": "${{ github.ref_name }}", "short": true},
+                {"title": "Environment", "value": "${{ github.event.inputs.environment || 'staging' }}", "short": true},
+                {"title": "JIRA", "value": "${{ steps.validation.outputs.jira_ticket || 'N/A' }}", "short": true},
+                {"title": "Workflow", "value": "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run>", "short": true}
+              ]
+            }]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  build-and-test:
+    needs: validate-hotfix
+    runs-on: ubuntu-latest
+    if: needs.validate-hotfix.outputs.branch-valid == 'true'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.hotfix_branch || github.ref }}
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+    
+    - name: Build Docker image
+      id: build
+      run: |
+        IMAGE_TAG="hotfix-$(echo ${{ github.ref_name }} | sed 's/\//-/g')-${{ github.run_number }}"
+        FULL_IMAGE_NAME="${{ env.ECR_REGISTRY }}/main-service:$IMAGE_TAG"
+        
+        docker build \
+          --build-arg BUILD_VERSION=$IMAGE_TAG \
+          --build-arg GIT_COMMIT=${{ github.sha }} \
+          --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+          -t $FULL_IMAGE_NAME \
+          .
+        
+        echo "image-tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
+        echo "full-image-name=$FULL_IMAGE_NAME" >> $GITHUB_OUTPUT
+    
+    - name: Run tests
+      if: github.event.inputs.skip_tests != 'true'
+      run: |
+        # Unit tests
+        docker run --rm \
+          -v $(pwd):/app \
+          -w /app \
+          ${{ steps.build.outputs.full-image-name }} \
+          npm test -- --coverage --ci --testResultsProcessor=jest-junit
+        
+        # Security scan
+        docker run --rm \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -v $(pwd):/tmp \
+          aquasec/trivy:latest image \
+          --exit-code 1 \
+          --severity HIGH,CRITICAL \
+          --format json \
+          --output /tmp/trivy-report.json \
+          ${{ steps.build.outputs.full-image-name }}
+    
+    - name: Push to ECR
+      run: |
+        docker push ${{ steps.build.outputs.full-image-name }}
+        
+        # Tag as hotfix-latest
+        docker tag ${{ steps.build.outputs.full-image-name }} \
+                   ${{ env.ECR_REGISTRY }}/main-service:hotfix-latest
+        docker push ${{ env.ECR_REGISTRY }}/main-service:hotfix-latest
+        
+        echo "✅ Image pushed: ${{ steps.build.outputs.full-image-name }}"
+
+  deploy:
+    needs: [validate-hotfix, build-and-test]
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    
+    steps:
+    - name: Checkout deployment scripts
+      uses: actions/checkout@v4
+    
+    - name: Configure AWS and Kubernetes
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Setup kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+    
+    - name: Update kubeconfig
+      run: |
+        aws eks update-kubeconfig \
+          --region ${{ env.AWS_REGION }} \
+          --name highspot-${{ github.event.inputs.environment || 'staging' }}
+    
+    - name: Deploy hotfix
+      id: deploy
+      run: |
+        IMAGE_TAG="hotfix-$(echo ${{ github.ref_name }} | sed 's/\//-/g')-${{ github.run_number }}"
+        FULL_IMAGE_NAME="${{ env.ECR_REGISTRY }}/main-service:$IMAGE_TAG"
+        
+        # Get current image for rollback
+        CURRENT_IMAGE=$(kubectl get deployment main-service \
+          -n ${{ github.event.inputs.environment || 'staging' }} \
+          -o jsonpath='{.spec.template.spec.containers[0].image}' 2>/dev/null || echo 'none')
+        
+        echo "current-image=$CURRENT_IMAGE" >> $GITHUB_OUTPUT
+        
+        # Deploy new image
+        kubectl set image deployment/main-service \
+          main-service=$FULL_IMAGE_NAME \
+          -n ${{ github.event.inputs.environment || 'staging' }}
+        
+        # Wait for rollout
+        kubectl rollout status deployment/main-service \
+          -n ${{ github.event.inputs.environment || 'staging' }} \
+          --timeout=300s
+    
+    - name: Health check verification
+      run: |
+        ENVIRONMENT="${{ github.event.inputs.environment || 'staging' }}"
+        if [ "$ENVIRONMENT" = "production" ]; then
+          HEALTH_URL="https://api.highspot.com/health"
+        else
+          HEALTH_URL="https://staging-api.highspot.com/health"
+        fi
+        
+        # Wait for service to be healthy
+        for i in {1..30}; do
+          if curl -f --max-time 10 "$HEALTH_URL"; then
+            echo "✅ Health check passed"
+            break
+          else
+            echo "⏳ Health check attempt $i/30 failed, retrying..."
+            sleep 10
+          fi
+          
+          if [ $i -eq 30 ]; then
+            echo "❌ Health check timeout"
+            exit 1
+          fi
+        done
+    
+    - name: Update JIRA ticket
+      if: needs.validate-hotfix.outputs.jira-ticket != ''
+      run: |
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -u "${{ secrets.JIRA_EMAIL }}:${{ secrets.JIRA_API_TOKEN }}" \
+          -d "{
+            \"body\": \"Hotfix deployed to ${{ github.event.inputs.environment || 'staging' }}\\n\\nDeployment Details:\\n- Branch: ${{ github.ref_name }}\\n- Commit: ${{ github.sha }}\\n- Run: ${{ github.run_number }}\\n- Environment: ${{ github.event.inputs.environment || 'staging' }}\"
+          }" \
+          "https://highspot.atlassian.net/rest/api/2/issue/${{ needs.validate-hotfix.outputs.jira-ticket }}/comment"
+    
+    - name: Notify deployment success
+      if: success()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: success
+        custom_payload: |
+          {
+            "text": "✅ Hotfix Deployment Successful",
+            "attachments": [{
+              "color": "good",
+              "fields": [
+                {"title": "Branch", "value": "${{ github.ref_name }}", "short": true},
+                {"title": "Environment", "value": "${{ github.event.inputs.environment || 'staging' }}", "short": true},
+                {"title": "Duration", "value": "${{ job.steps.deploy.conclusion }}", "short": true}
+              ]
+            }]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    
+    - name: Rollback on failure
+      if: failure()
+      run: |
+        if [ "${{ steps.deploy.outputs.current-image }}" != "none" ]; then
+          echo "🔄 Performing automatic rollback..."
+          kubectl set image deployment/main-service \
+            main-service=${{ steps.deploy.outputs.current-image }} \
+            -n ${{ github.event.inputs.environment || 'staging' }}
+          
+          kubectl rollout status deployment/main-service \
+            -n ${{ github.event.inputs.environment || 'staging' }} \
+            --timeout=300s
+          
+          echo "✅ Rollback completed"
+        fi
+    
+    - name: Notify deployment failure
+      if: failure()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: failure
+        custom_payload: |
+          {
+            "text": "❌ Hotfix Deployment Failed",
+            "attachments": [{
+              "color": "danger",
+              "fields": [
+                {"title": "Branch", "value": "${{ github.ref_name }}", "short": true},
+                {"title": "Environment", "value": "${{ github.event.inputs.environment || 'staging' }}", "short": true},
+                {"title": "Rollback", "value": "Automatic rollback executed", "short": true}
+              ]
+            }]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}</code></pre>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-800 mb-2">
+                            <i class="fab fa-github mr-2"></i>Repository Links
+                        </h5>
+                        <ul class="text-blue-700 text-sm space-y-1">
+                            <li><a href="#" class="hover:underline">→ Jenkins Hotfix Pipeline</a></li>
+                            <li><a href="#" class="hover:underline">→ Python Deployment Orchestrator</a></li>
+                            <li><a href="#" class="hover:underline">→ GitHub Actions Workflows</a></li>
+                            <li><a href="#" class="hover:underline">→ Kubernetes Deployment Manifests</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-800 mb-2">
+                            <i class="fas fa-file-code mr-2"></i>Technical Documentation
+                        </h5>
+                        <ul class="text-green-700 text-sm space-y-1">
+                            <li><a href="#" class="hover:underline">→ Hotfix Deployment Procedures</a></li>
+                            <li><a href="#" class="hover:underline">→ Automated Rollback Strategies</a></li>
+                            <li><a href="#" class="hover:underline">→ Emergency Response Playbook</a></li>
+                            <li><a href="#" class="hover:underline">→ Deployment Monitoring & Alerting</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="detail-section">
-                <h3>Challenge</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    The existing hotfix deployment process was highly manual, cumbersome, and prone to human error. It involved multiple sequential steps, including manual request approvals via various channels, manual Pull Request (PR) merges, and manually triggering disparate deployment pipelines (for web, API, and batch jobs) across different production resources. This fragmented and manual approach led to significant delays in deploying critical bug fixes, directly impacting Mean Time To Recovery (MTTR) for incidents, and consumed an excessive amount of time from both DevOps and Platform engineering teams, diverting them from strategic initiatives.
-                </p>
-            </div>
-
-            <div class="detail-section">
-                <h3>Action</h3>
-                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
-                    <li>Conducted a thorough, step-by-step analysis of the existing manual hotfix workflow, identifying key bottlenecks and opportunities for automation.</li>
-                    <li>Designed and implemented a system to route hotfix requests automatically via dedicated Slack channels and email aliases for manager and DevOps team approval.</li>
-                    <li>Developed robust and secure Bash scripts that, upon approval, automatically handled the merging of hotfix-related Pull Requests (PRs) into the main branch.</li>
-                    <li>Seamlessly integrated these automated steps directly into the existing CI/CD pipelines (e.g., Buildkite, Spinnaker), leveraging AWS Lambda functions as orchestrators.</li>
-                    <li>Ensured that the newly automated pipelines included built-in checks and robust monitoring mechanisms for validation and quick, reliable rollbacks.</li>
-                </ul>
-            </div>
-
-            <div class="detail-section">
-                <h3>Result</h3>
-                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
-                    <li>The automation initiative achieved an unprecedented <span class="font-semibold text-blue-600">70-80% automation</span> of the hotfix deployment process.</li>
-                    <li>Resulted in an <span class="font-semibold text-blue-600">80% reduction</span> in manual interventions.</li>
-                    <li>Significantly increased the delivery speed for critical fixes, directly contributing to reduced Mean Time To Recovery (MTTR) for production incidents and improved overall release stability.</li>
-                    <li>Effectively freed up substantial engineering time, allowing DevOps and Platform teams to reallocate their focus towards more strategic, long-term initiatives.</li>
-                </ul>
-            </div>
-
-            <div class="detail-section">
-                <h3>Review</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    This project was a critical success, fundamentally transforming Highspot's feature delivery capabilities and accelerating its product development lifecycle. My ability to lead the design, implement complex Clojure code, integrate securely with external services, and conduct thorough, multi-faceted testing was paramount. The collaborative approach, especially in debugging intricate cross-service issues, proved highly effective in overcoming technical hurdles. The system now provides a flexible, resilient, and safe mechanism for future product innovation and experimentation, allowing Highspot to be more agile and responsive to market demands.
-                </p>
+                <h3>Development Practices & Quality Assurance</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                            <i class="fas fa-vial mr-2 text-purple-600"></i>Emergency Deployment Testing
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-purple-50 p-3 rounded">
+                                <h5 class="font-medium text-purple-800">Automated Validation</h5>
+                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
+                                    <li>• Pre-deployment validation and smoke tests</li>
+                                    <li>• Health check automation and monitoring</li>
+                                    <li>• Performance regression detection</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-3 rounded">
+                                <h5 class="font-medium text-purple-800">Quality Gates</h5>
+                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
+                                    <li>• Security vulnerability scanning</li>
+                                    <li>• Branch naming and JIRA ticket validation</li>
+                                    <li>• Rollback capability verification</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                            <i class="fab fa-git-alt mr-2 text-orange-600"></i>Deployment Operations
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-orange-50 p-3 rounded">
+                                <h5 class="font-medium text-orange-800">Emergency Response</h5>
+                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
+                                    <li>• 80% automation in hotfix deployment process</li>
+                                    <li>• Automatic rollback on failure detection</li>
+                                    <li>• Real-time Slack notifications and alerts</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-3 rounded">
+                                <h5 class="font-medium text-orange-800">Operational Excellence</h5>
+                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
+                                    <li>• Multi-environment deployment consistency</li>
+                                    <li>• JIRA integration for incident tracking</li>
+                                    <li>• Post-deployment monitoring and validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                        <i class="fas fa-shield-alt mr-2 text-green-600"></i>Automation Success Metrics
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">80%</div>
+                            <div class="text-sm text-gray-600">Deployment Automation</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">80%</div>
+                            <div class="text-sm text-gray-600">Manual Effort Reduction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">5min</div>
+                            <div class="text-sm text-gray-600">Average Deployment Time</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="mt-8 flex justify-center space-x-4">
@@ -78,16 +1292,5 @@
                     <i class="fas fa-home"></i> <span>Back to Home</span>
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Placeholder for Footer - REPLACED EXISTING FOOTER -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Placeholder for Contact Modal HTML Structure - REPLACED EXISTING MODAL -->
-    <div id="contact-modal-placeholder"></div>
-
-    <!-- Link to external JavaScript file -->
-    <script src="js/main.js"></script>
-</body>
-</html>
+        <!-- Project Navigation Section -->

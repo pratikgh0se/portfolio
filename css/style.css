@@ -5,6 +5,18 @@ body {
     color: #333;
 }
 
+/* Color Theme Variables */
+:root {
+    --color-primary-blue: #3b82f6;
+    --color-primary-blue-hover: #2563eb;
+    --color-secondary-green: #16a34a;
+    --color-secondary-green-hover: #15803d;
+    --color-accent-purple: #9333ea;
+    --color-accent-purple-hover: #7c3aed;
+    --color-accent-orange: #ea580c;
+    --color-accent-orange-hover: #dc2626;
+}
+
 /* Section Heading Styles */
 .section-heading {
     position: relative;
@@ -18,46 +30,169 @@ body {
     bottom: 0;
     width: 60px;
     height: 4px;
-    background-color: #3b82f6; /* Blue-500 */
+    background-color: var(--color-primary-blue);
     border-radius: 9999px;
+}
+
+/* Section Heading Color Variants */
+.section-heading.green::after {
+    background-color: var(--color-secondary-green);
+}
+.section-heading.purple::after {
+    background-color: var(--color-accent-purple);
+}
+.section-heading.orange::after {
+    background-color: var(--color-accent-orange);
 }
 
 /* Primary Button Styles */
 .btn-primary {
-    background-color: #3b82f6;
+    background-color: var(--color-primary-blue);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: background-color 0.2s ease-in-out;
 }
 .btn-primary:hover {
-    background-color: #2563eb;
+    background-color: var(--color-primary-blue-hover);
+}
+
+/* Button Color Variants */
+.btn-green {
+    background-color: var(--color-secondary-green);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-green:hover {
+    background-color: var(--color-secondary-green-hover);
+}
+
+.btn-purple {
+    background-color: var(--color-accent-purple);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-purple:hover {
+    background-color: var(--color-accent-purple-hover);
+}
+
+.btn-orange {
+    background-color: var(--color-accent-orange);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-orange:hover {
+    background-color: var(--color-accent-orange-hover);
 }
 
 /* Project Card Styles (for index.html and projects.html) */
 .project-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-left: 4px solid transparent;
 }
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Project Card Color Variants */
+.project-card.blue {
+    border-left-color: var(--color-primary-blue);
+}
+.project-card.green {
+    border-left-color: var(--color-secondary-green);
+}
+.project-card.purple {
+    border-left-color: var(--color-accent-purple);
+}
+.project-card.orange {
+    border-left-color: var(--color-accent-orange);
+}
+
+/* Accent Links */
+.text-accent-blue {
+    color: var(--color-primary-blue);
+}
+.text-accent-green {
+    color: var(--color-secondary-green);
+}
+.text-accent-purple {
+    color: var(--color-accent-purple);
+}
+.text-accent-orange {
+    color: var(--color-accent-orange);
+}
+
+/* Background Accent Colors */
+.bg-accent-blue {
+    background-color: #dbeafe; /* Blue-100 */
+}
+.bg-accent-green {
+    background-color: #dcfce7; /* Green-100 */
+}
+.bg-accent-purple {
+    background-color: #f3e8ff; /* Purple-100 */
+}
+.bg-accent-orange {
+    background-color: #fed7aa; /* Orange-100 */
+}
+
 /* Skill Category Title Styles (for index.html and skills-graphical.html) */
 .skill-category-title {
-    color: #1e40af; /* Blue-800 */
     font-weight: 600;
     margin-bottom: 0.75rem;
 }
 
+/* Skill Category Color Variants */
+.skill-category-title.blue {
+    color: #1e40af; /* Blue-800 */
+}
+.skill-category-title.green {
+    color: #15803d; /* Green-700 */
+}
+.skill-category-title.purple {
+    color: #7c3aed; /* Purple-700 */
+}
+.skill-category-title.orange {
+    color: #c2410c; /* Orange-700 */
+}
+
 /* Skill Item Styles (for index.html) */
 .skill-item {
-    background-color: #e0e7ff; /* Blue-100 */
-    color: #1e40af; /* Blue-800 */
     padding: 0.3rem 0.8rem;
     border-radius: 0.375rem;
     font-size: 0.875rem;
     font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Skill Item Color Variants */
+.skill-item.blue {
+    background-color: #dbeafe; /* Blue-100 */
+    color: #1e40af; /* Blue-800 */
+}
+.skill-item.green {
+    background-color: #dcfce7; /* Green-100 */
+    color: #15803d; /* Green-700 */
+}
+.skill-item.purple {
+    background-color: #f3e8ff; /* Purple-100 */
+    color: #7c3aed; /* Purple-700 */
+}
+.skill-item.orange {
+    background-color: #fed7aa; /* Orange-100 */
+    color: #c2410c; /* Orange-700 */
+}
+
+.skill-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Skill Badge Container (for index.html and skills-graphical.html) */
@@ -70,12 +205,34 @@ body {
 
 /* Skill Badge Styles (for index.html and skills-graphical.html) */
 .skill-badge {
-    background-color: #e0e7ff; /* Blue-100 */
-    color: #1e40af; /* Blue-800 */
     padding: 0.4rem 0.9rem;
     border-radius: 9999px; /* Fully rounded */
     font-size: 0.9rem;
     font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Skill Badge Color Variants */
+.skill-badge.blue {
+    background-color: #dbeafe; /* Blue-100 */
+    color: #1e40af; /* Blue-800 */
+}
+.skill-badge.green {
+    background-color: #dcfce7; /* Green-100 */
+    color: #15803d; /* Green-700 */
+}
+.skill-badge.purple {
+    background-color: #f3e8ff; /* Purple-100 */
+    color: #7c3aed; /* Purple-700 */
+}
+.skill-badge.orange {
+    background-color: #fed7aa; /* Orange-100 */
+    color: #c2410c; /* Orange-700 */
+}
+
+.skill-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Modal specific styles (for contact modal) */

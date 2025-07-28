@@ -81,6 +81,680 @@
                 </p>
             </div>
 
+            <div class="detail-section">
+                <h3>System Architecture & Design</h3>
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">CI/CD Pipeline Architecture</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="mermaid-container bg-white p-4 rounded border-2 border-blue-200 mb-4">
+                            <div class="text-sm text-gray-600 mb-2 text-center font-mono">C4 Level 1: End-to-End CI/CD System</div>
+                            <pre class="mermaid text-xs">
+graph TB
+    subgraph "👨‍💻 Development"
+        Dev[👤 Developers]
+        Git[📚 Git Repository<br/>Source Control]
+        PR[🔀 Pull Request<br/>Code Review]
+    end
+    
+    subgraph "🏗️ Build Pipeline"
+        Jenkins[⚙️ Jenkins<br/>CI/CD Engine]
+        Build[🔨 Maven/Gradle<br/>Application Build]
+        Test[🧪 Unit & Integration<br/>Testing Suite]
+        Docker[🐳 Docker<br/>Containerization]
+    end
+    
+    subgraph "☁️ Azure Infrastructure"
+        ACR[📦 Azure Container<br/>Registry]
+        AppService[🌐 Azure App Service<br/>Web Applications]
+        AKS[🚢 Azure Kubernetes<br/>Service (AKS)]
+        VM[💻 Azure VMs<br/>Traditional Apps]
+    end
+    
+    subgraph "🔧 Infrastructure Automation"
+        Python[🐍 Python Scripts<br/>Azure SDK]
+        Terraform[🏗️ Terraform<br/>POC Modules]
+        Config[⚙️ Configuration<br/>Management]
+    end
+    
+    Dev --> Git
+    Git --> PR
+    PR --> Jenkins
+    
+    Jenkins --> Build
+    Build --> Test
+    Test --> Docker
+    Docker --> ACR
+    
+    Jenkins --> Python
+    Python --> AppService
+    Python --> AKS
+    Python --> VM
+    
+    Terraform --> Config
+    Config --> AppService
+    
+    style Jenkins fill:#ff9800
+    style Docker fill:#2196f3
+    style Python fill:#4caf50
+    style Terraform fill:#9c27b0
+                            </pre>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Source code repositories and version control</li>
+                            <li>Jenkins-based build and deployment pipelines</li>
+                            <li>Containerized application packaging with Docker</li>
+                            <li>Microsoft Azure cloud infrastructure deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Infrastructure Automation Design</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="mermaid-container bg-white p-4 rounded border-2 border-green-200 mb-4">
+                            <div class="text-sm text-gray-600 mb-2 text-center font-mono">Infrastructure Automation Workflow</div>
+                            <pre class="mermaid text-xs">
+sequenceDiagram
+    participant Dev as 👤 Developer
+    participant Jenkins as ⚙️ Jenkins Pipeline
+    participant Python as 🐍 Python Scripts
+    participant Azure as ☁️ Azure Services
+    participant App as 🌐 Application
+    participant Monitor as 📊 Monitoring
+    
+    Dev->>Jenkins: Push Code + Infrastructure
+    Jenkins->>Jenkins: Run Tests & Build
+    Jenkins->>Python: Execute Deployment Script
+    Python->>Azure: Provision Infrastructure<br/>Resource Groups, App Plans
+    Azure-->>Python: Infrastructure Ready
+    Python->>Azure: Deploy Application<br/>Container/Code
+    Azure-->>App: Application Running
+    App->>Monitor: Health Check Success
+    Monitor-->>Jenkins: Deployment Verified
+    Jenkins-->>Dev: ✅ Deployment Complete
+    
+    Note over Python: 80% manual<br/>process automation
+    Note over Azure: 60% faster<br/>deployment time
+                            </pre>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Python-based infrastructure provisioning scripts</li>
+                            <li>Terraform POC modules and configurations</li>
+                            <li>Automated deployment orchestration</li>
+                            <li>Configuration management and standardization</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Containerization & Deployment Strategy</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="mermaid-container bg-white p-4 rounded border-2 border-purple-200 mb-4">
+                            <div class="text-sm text-gray-600 mb-2 text-center font-mono">Multi-Environment Deployment Strategy</div>
+                            <pre class="mermaid text-xs">
+graph LR
+    subgraph "📦 Container Strategy"
+        Dockerfile[📄 Dockerfile<br/>Multi-stage Build]
+        Registry[📦 Azure Container<br/>Registry (ACR)]
+        Security[🔒 Security Scanning<br/>Vulnerability Checks]
+    end
+    
+    subgraph "🌍 Environment Tiers"
+        Dev[🔧 Development<br/>Basic Resources]
+        Staging[🧪 Staging<br/>Production-like]
+        Prod[🚀 Production<br/>High Availability]
+    end
+    
+    subgraph "📊 Operations"
+        Logs[📝 Centralized<br/>Logging]
+        Metrics[📈 Application<br/>Metrics]
+        Alerts[🚨 Automated<br/>Alerting]
+    end
+    
+    Dockerfile --> Registry
+    Registry --> Security
+    Security --> Dev
+    Security --> Staging
+    Security --> Prod
+    
+    Dev --> Logs
+    Staging --> Metrics
+    Prod --> Alerts
+    
+    style Dockerfile fill:#ff5722
+    style Registry fill:#00bcd4
+    style Prod fill:#4caf50
+                            </pre>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Docker containerization standards and best practices</li>
+                            <li>Multi-environment deployment strategies</li>
+                            <li>Azure cloud services integration</li>
+                            <li>Monitoring and logging integration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-blue-800 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <strong>Technical Note:</strong> Architecture demonstrates foundational DevOps practices with CI/CD automation, containerization, and Infrastructure as Code principles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Technical Implementation & Code Samples</h3>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Jenkins Pipeline Configuration</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code>// Jenkins pipeline for automated application deployment
+pipeline {
+    agent any
+    
+    environment {
+        AZURE_CREDENTIALS = credentials('azure-service-principal')
+        DOCKER_REGISTRY = 'epamregistry.azurecr.io'
+        APPLICATION_NAME = 'webapp'
+    }
+    
+    parameters {
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'staging', 'prod'], 
+               description: 'Target deployment environment')
+        string(name: 'VERSION', defaultValue: 'latest', 
+               description: 'Application version tag')
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/epam/webapp.git'
+            }
+        }
+        
+        stage('Build Application') {
+            steps {
+                sh 'mvn clean package'
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
+        
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn test'
+                publishTestResults testResultsPattern: 'target/surefire-reports/*.xml'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    def image = docker.build("${APPLICATION_NAME}:${params.VERSION}")
+                    docker.withRegistry("https://${DOCKER_REGISTRY}", 'azure-registry-credentials') {
+                        image.push()
+                        image.push('latest')
+                    }
+                }
+            }
+        }
+        
+        stage('Deploy Infrastructure') {
+            steps {
+                sh '''
+                    python3 infrastructure/deploy.py \
+                        --environment ${ENVIRONMENT} \
+                        --application ${APPLICATION_NAME} \
+                        --version ${VERSION}
+                '''
+            }
+        }
+        
+        stage('Deploy Application') {
+            steps {
+                sh '''
+                    az webapp config container set \
+                        --name ${APPLICATION_NAME}-${ENVIRONMENT} \
+                        --resource-group ${APPLICATION_NAME}-rg \
+                        --docker-custom-image-name ${DOCKER_REGISTRY}/${APPLICATION_NAME}:${VERSION} \
+                        --docker-registry-server-url https://${DOCKER_REGISTRY}
+                '''
+            }
+        }
+        
+        stage('Health Check') {
+            steps {
+                script {
+                    def healthUrl = "https://${APPLICATION_NAME}-${params.ENVIRONMENT}.azurewebsites.net/health"
+                    timeout(time: 5, unit: 'MINUTES') {
+                        waitUntil {
+                            script {
+                                def response = sh(
+                                    script: "curl -s -o /dev/null -w '%{http_code}' ${healthUrl}",
+                                    returnStdout: true
+                                ).trim()
+                                return response == '200'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+        success {
+            emailext(
+                subject: "✅ Deployment Success: ${APPLICATION_NAME} v${params.VERSION}",
+                body: "Application deployed successfully to ${params.ENVIRONMENT}",
+                to: "${env.CHANGE_AUTHOR_EMAIL}"
+            )
+        }
+        failure {
+            emailext(
+                subject: "❌ Deployment Failed: ${APPLICATION_NAME} v${params.VERSION}",
+                body: "Deployment failed. Please check the build logs.",
+                to: "${env.CHANGE_AUTHOR_EMAIL}"
+            )
+        }
+    }
+}</code></pre>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Python Infrastructure Automation Script</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code># Python script for automated Azure infrastructure provisioning
+import argparse
+import json
+import subprocess
+import sys
+from typing import Dict, List
+
+class AzureInfrastructureDeployer:
+    def __init__(self, environment: str, application_name: str):
+        self.environment = environment
+        self.application_name = application_name
+        self.resource_group = f"{application_name}-{environment}-rg"
+        
+    def create_resource_group(self) -> bool:
+        """Create Azure resource group if it doesn't exist"""
+        try:
+            cmd = [
+                "az", "group", "create",
+                "--name", self.resource_group,
+                "--location", "eastus",
+                "--tags", f"Environment={self.environment}",
+                f"Application={self.application_name}"
+            ]
+            
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                print(f"✓ Resource group {self.resource_group} created/verified")
+                return True
+            else:
+                print(f"✗ Failed to create resource group: {result.stderr}")
+                return False
+                
+        except Exception as e:
+            print(f"✗ Error creating resource group: {e}")
+            return False
+    
+    def deploy_app_service_plan(self) -> bool:
+        """Deploy Azure App Service Plan"""
+        try:
+            plan_name = f"{self.application_name}-{self.environment}-plan"
+            
+            # Check if plan exists
+            check_cmd = [
+                "az", "appservice", "plan", "show",
+                "--name", plan_name,
+                "--resource-group", self.resource_group
+            ]
+            
+            result = subprocess.run(check_cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                print(f"✓ App Service Plan {plan_name} already exists")
+                return True
+            
+            # Create new plan
+            create_cmd = [
+                "az", "appservice", "plan", "create",
+                "--name", plan_name,
+                "--resource-group", self.resource_group,
+                "--sku", "S1" if self.environment == "prod" else "B1",
+                "--is-linux"
+            ]
+            
+            result = subprocess.run(create_cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                print(f"✓ App Service Plan {plan_name} created successfully")
+                return True
+            else:
+                print(f"✗ Failed to create App Service Plan: {result.stderr}")
+                return False
+                
+        except Exception as e:
+            print(f"✗ Error deploying App Service Plan: {e}")
+            return False
+    
+    def deploy_web_app(self, version: str) -> bool:
+        """Deploy Azure Web App"""
+        try:
+            app_name = f"{self.application_name}-{self.environment}"
+            plan_name = f"{self.application_name}-{self.environment}-plan"
+            
+            # Check if app exists
+            check_cmd = [
+                "az", "webapp", "show",
+                "--name", app_name,
+                "--resource-group", self.resource_group
+            ]
+            
+            result = subprocess.run(check_cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                print(f"✓ Web App {app_name} already exists")
+                return True
+            
+            # Create new web app
+            create_cmd = [
+                "az", "webapp", "create",
+                "--name", app_name,
+                "--resource-group", self.resource_group,
+                "--plan", plan_name,
+                "--deployment-container-image-name", f"nginx:latest"
+            ]
+            
+            result = subprocess.run(create_cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                print(f"✓ Web App {app_name} created successfully")
+                
+                # Configure app settings
+                self.configure_app_settings(app_name)
+                return True
+            else:
+                print(f"✗ Failed to create Web App: {result.stderr}")
+                return False
+                
+        except Exception as e:
+            print(f"✗ Error deploying Web App: {e}")
+            return False
+    
+    def configure_app_settings(self, app_name: str) -> bool:
+        """Configure application settings"""
+        try:
+            settings = {
+                "ENVIRONMENT": self.environment,
+                "APPLICATION_NAME": self.application_name,
+                "LOG_LEVEL": "INFO" if self.environment == "prod" else "DEBUG"
+            }
+            
+            for key, value in settings.items():
+                cmd = [
+                    "az", "webapp", "config", "appsettings", "set",
+                    "--name", app_name,
+                    "--resource-group", self.resource_group,
+                    "--settings", f"{key}={value}"
+                ]
+                
+                subprocess.run(cmd, capture_output=True, text=True)
+            
+            print(f"✓ App settings configured for {app_name}")
+            return True
+            
+        except Exception as e:
+            print(f"✗ Error configuring app settings: {e}")
+            return False
+    
+    def deploy_infrastructure(self, version: str) -> bool:
+        """Deploy complete infrastructure stack"""
+        print(f"🚀 Starting infrastructure deployment for {self.application_name} v{version}")
+        
+        steps = [
+            ("Creating resource group", self.create_resource_group),
+            ("Deploying App Service Plan", self.deploy_app_service_plan),
+            ("Deploying Web App", lambda: self.deploy_web_app(version))
+        ]
+        
+        for step_name, step_function in steps:
+            print(f"\n📦 {step_name}...")
+            if not step_function():
+                print(f"❌ Infrastructure deployment failed at: {step_name}")
+                return False
+        
+        print(f"\n🎉 Infrastructure deployment completed successfully!")
+        return True
+
+def main():
+    parser = argparse.ArgumentParser(description='Deploy Azure infrastructure')
+    parser.add_argument('--environment', required=True, choices=['dev', 'staging', 'prod'])
+    parser.add_argument('--application', required=True, help='Application name')
+    parser.add_argument('--version', required=True, help='Application version')
+    
+    args = parser.parse_args()
+    
+    deployer = AzureInfrastructureDeployer(args.environment, args.application)
+    success = deployer.deploy_infrastructure(args.version)
+    
+    sys.exit(0 if success else 1)
+
+if __name__ == "__main__":
+    main()</code></pre>
+                </div>
+                
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Terraform POC Configuration</h4>
+                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
+                    <pre><code># Terraform configuration for Azure infrastructure (POC)
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+  validation {
+    condition = contains(["dev", "staging", "prod"], var.environment)
+    error_message = "Environment must be dev, staging, or prod."
+  }
+}
+
+variable "application_name" {
+  description = "Application name"
+  type        = string
+}
+
+variable "location" {
+  description = "Azure region"
+  type        = string
+  default     = "East US"
+}
+
+# Resource Group
+resource "azurerm_resource_group" "main" {
+  name     = "${var.application_name}-${var.environment}-rg"
+  location = var.location
+
+  tags = {
+    Environment = var.environment
+    Application = var.application_name
+    ManagedBy   = "Terraform"
+  }
+}
+
+# App Service Plan
+resource "azurerm_service_plan" "main" {
+  name                = "${var.application_name}-${var.environment}-plan"
+  resource_group_name = azurerm_resource_group.main.name
+  location           = azurerm_resource_group.main.location
+  os_type            = "Linux"
+  sku_name           = var.environment == "prod" ? "S1" : "B1"
+
+  tags = {
+    Environment = var.environment
+    Application = var.application_name
+  }
+}
+
+# Web App
+resource "azurerm_linux_web_app" "main" {
+  name                = "${var.application_name}-${var.environment}"
+  resource_group_name = azurerm_resource_group.main.name
+  location           = azurerm_service_plan.main.location
+  service_plan_id    = azurerm_service_plan.main.id
+
+  site_config {
+    application_stack {
+      docker_image     = "nginx"
+      docker_image_tag = "latest"
+    }
+  }
+
+  app_settings = {
+    "ENVIRONMENT"      = var.environment
+    "APPLICATION_NAME" = var.application_name
+    "LOG_LEVEL"       = var.environment == "prod" ? "INFO" : "DEBUG"
+  }
+
+  tags = {
+    Environment = var.environment
+    Application = var.application_name
+  }
+}
+
+# Container Registry
+resource "azurerm_container_registry" "main" {
+  count               = var.environment == "prod" ? 1 : 0
+  name                = "${replace(var.application_name, "-", "")}registry"
+  resource_group_name = azurerm_resource_group.main.name
+  location           = azurerm_resource_group.main.location
+  sku                = "Basic"
+  admin_enabled      = true
+
+  tags = {
+    Environment = var.environment
+    Application = var.application_name
+  }
+}
+
+# Outputs
+output "web_app_url" {
+  value = "https://${azurerm_linux_web_app.main.default_hostname}"
+}
+
+output "resource_group_name" {
+  value = azurerm_resource_group.main.name
+}</code></pre>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-800 mb-2">
+                            <i class="fab fa-github mr-2"></i>Repository Links
+                        </h5>
+                        <ul class="text-blue-700 text-sm space-y-1">
+                            <li><a href="#" class="hover:underline">→ Jenkins Pipeline Scripts</a></li>
+                            <li><a href="#" class="hover:underline">→ Python Infrastructure Automation</a></li>
+                            <li><a href="#" class="hover:underline">→ Terraform POC Modules</a></li>
+                            <li><a href="#" class="hover:underline">→ Docker Containerization Templates</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-800 mb-2">
+                            <i class="fas fa-file-code mr-2"></i>Technical Documentation
+                        </h5>
+                        <ul class="text-green-700 text-sm space-y-1">
+                            <li><a href="#" class="hover:underline">→ CI/CD Pipeline Setup Guide</a></li>
+                            <li><a href="#" class="hover:underline">→ Azure Infrastructure Standards</a></li>
+                            <li><a href="#" class="hover:underline">→ Docker Best Practices</a></li>
+                            <li><a href="#" class="hover:underline">→ Terraform Implementation Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Development Practices & Quality Assurance</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                            <i class="fas fa-vial mr-2 text-purple-600"></i>Foundation Testing & Validation
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-purple-50 p-3 rounded">
+                                <h5 class="font-medium text-purple-800">Pipeline Testing</h5>
+                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
+                                    <li>• Jenkins pipeline syntax validation</li>
+                                    <li>• Docker image build and security scanning</li>
+                                    <li>• Infrastructure deployment verification</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-3 rounded">
+                                <h5 class="font-medium text-purple-800">Application Testing</h5>
+                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
+                                    <li>• Unit and integration test automation</li>
+                                    <li>• Health check and smoke testing</li>
+                                    <li>• Multi-environment deployment validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                            <i class="fab fa-git-alt mr-2 text-orange-600"></i>DevOps Foundation Operations
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-orange-50 p-3 rounded">
+                                <h5 class="font-medium text-orange-800">Automation Excellence</h5>
+                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
+                                    <li>• Continuous integration and deployment</li>
+                                    <li>• Infrastructure as Code implementation</li>
+                                    <li>• Configuration management standardization</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-3 rounded">
+                                <h5 class="font-medium text-orange-800">Learning & Development</h5>
+                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
+                                    <li>• DevOps best practices establishment</li>
+                                    <li>• Cloud platform expertise development</li>
+                                    <li>• Foundation for advanced automation patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                        <i class="fas fa-shield-alt mr-2 text-green-600"></i>Foundation Impact Metrics
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">60%</div>
+                            <div class="text-sm text-gray-600">Deployment Time Reduction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">80%</div>
+                            <div class="text-sm text-gray-600">Manual Process Automation</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">100%</div>
+                            <div class="text-sm text-gray-600">Infrastructure Consistency</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mt-8 flex justify-center space-x-4">
                 <a href="projects.html" class="btn-primary flex items-center space-x-2">
                     <i class="fas fa-arrow-left"></i> <span>Back to All Projects</span>
@@ -98,6 +772,18 @@
     <!-- Placeholder for Contact Modal HTML Structure - REPLACED EXISTING MODAL -->
     <div id="contact-modal-placeholder"></div>
 
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: 12
+        });
+    </script>
+    
     <!-- Link to external JavaScript file -->
     <script src="js/main.js"></script>
 </body>
