@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Multi-Cloud Kubernetes Migration & Optimization | Pratik Ghose</title>
-    <!-- Favicon: A simple cloud icon as SVG -->
+    <!-- Favicon: A simple cloud icon as SVG - ADDED -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.86 2.53-7.58 6.04C2.71 10.75 1 12.68 1 15c0 3.31 2.69 6 6 6h12c3.31 0 6-2.69 6-6 0-2.68-1.71-4.91-4.65-5.96zM12 6c2.76 0 5 2.24 5 5h-2c0-1.66-1.34-3-3-3s-3 1.34-3 3H7c0-2.76 2.24-5 5-5z'/></svg>" type="image/svg+xml">
     <!-- Link to Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -16,662 +16,60 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="antialiased">
-    <!-- Placeholder for Header/Navigation Bar -->
+    <!-- Placeholder for Header/Navigation Bar - REPLACED EXISTING HEADER -->
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="py-12 md:py-16 bg-gradient-to-br from-blue-600 to-indigo-800 text-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <div class="mb-4">
-                            <span class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                <i class="fas fa-cube mr-2"></i>Cloud Architecture
-                            </span>
-                        </div>
-                        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                            Multi-Cloud Kubernetes Migration & Core Service Optimization
-                        </h1>
-                        <p class="text-xl mb-6 opacity-90 leading-relaxed">
-                            Directed comprehensive <span class="text-yellow-300 font-semibold">multi-cloud Kubernetes migrations</span> 
-                            across AWS EKS and Azure AKS, enhancing <span class="text-green-300 font-semibold">scalability and reliability</span> 
-                            while reducing operational overhead.
-                        </p>
-                        <div class="flex flex-wrap gap-3 mb-6">
-                            <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">Amazon EKS</span>
-                            <span class="bg-indigo-500 px-3 py-1 rounded-full text-sm">Azure AKS</span>
-                            <span class="bg-green-500 px-3 py-1 rounded-full text-sm">Terraform</span>
-                            <span class="bg-orange-500 px-3 py-1 rounded-full text-sm">ArgoCD</span>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-green-300">Multi-Cloud</div>
-                            <div class="text-sm opacity-90">Architecture</div>
-                        </div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-blue-300">AWS EKS</div>
-                            <div class="text-sm opacity-90">Migration</div>
-                        </div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-purple-300">Azure AKS</div>
-                            <div class="text-sm opacity-90">Integration</div>
-                        </div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-orange-300">GitOps</div>
-                            <div class="text-sm opacity-90">Workflows</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="py-12 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-600">
-                        <i class="fas fa-building text-blue-600 text-2xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Company</h3>
-                        <p class="text-gray-600">Highspot</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-indigo-600">
-                        <i class="fas fa-calendar text-indigo-600 text-2xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Duration</h3>
-                        <p class="text-gray-600">April 2024 - Present</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-600">
-                        <i class="fas fa-cloud text-green-600 text-2xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Scope</h3>
-                        <p class="text-gray-600">Multi-cloud infrastructure modernization</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
+    <!-- Project Detail Section -->
     <section class="py-16 md:py-20 container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-            
-            <!-- Project Summary -->
-            <div class="mb-16">
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-600">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-cube text-blue-600 mr-3"></i>Project Overview
-                    </h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Directed the migration and optimization of core services across various Kubernetes environments, including 
-                        Amazon EKS and conceptualizing patterns for Azure AKS, enhancing scalability, reliability, and reducing 
-                        operational overhead through strategic platform transitions and modern infrastructure practices.
-                    </p>
-                </div>
-            </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Multi-Cloud Kubernetes Migration & Core Service Optimization</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> Highspot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> April 2024 - Present</p>
 
-            <!-- Challenge & Solution -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-red-600">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>Challenge
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Highspot's core services were deployed across a mix of disparate and legacy infrastructure, including 
-                        various Kubernetes platforms and older container orchestration systems. This created significant limitations 
-                        in achieving consistent dynamic scalability, ensuring uniform reliability, and incurred high operational 
-                        overhead due to fragmented management and maintenance across different cloud providers.
-                    </p>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-600">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-lightbulb text-green-600 mr-3"></i>Solution Impact
-                    </h3>
-                    <div class="space-y-3 text-gray-700">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Enhanced scalability across multi-cloud environments</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Improved reliability through modern Kubernetes practices</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Reduced operational overhead via automation</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Established foundation for future innovation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Directed the migration and optimization of core services across various Kubernetes environments, including Amazon EKS and conceptualizing patterns for Azure AKS, enhancing scalability, reliability, and reducing operational overhead through strategic platform transitions.
+            </p>
 
-            <!-- System Architecture -->
-            <div class="mb-16">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-sitemap mr-3 text-blue-600"></i>System Architecture & Design
-                    </h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4">
-                            <i class="fas fa-cloud text-blue-600 mr-2"></i>Multi-Cloud Kubernetes Architecture
-                        </h4>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                            <p class="text-gray-700 text-sm italic mb-2">Diagram Placeholder: Multi-cloud K8s architecture showing:</p>
-                            <ul class="text-gray-600 text-sm space-y-1">
-                                <li>• AWS EKS clusters with IRSA integration</li>
-                                <li>• Azure AKS conceptual patterns</li>
-                                <li>• Cross-cloud service mesh connectivity</li>
-                                <li>• GitOps deployment pipelines</li>
-                            </ul>
-                        </div>
-                        <p class="text-gray-700 text-sm">
-                            Comprehensive multi-cloud Kubernetes architecture enabling seamless service deployment 
-                            and management across AWS EKS and Azure AKS platforms.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4">
-                            <i class="fas fa-code-branch text-green-600 mr-2"></i>GitOps Deployment Flow
-                        </h4>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                            <p class="text-gray-700 text-sm italic mb-2">Diagram Placeholder: GitOps workflow showing:</p>
-                            <ul class="text-gray-600 text-sm space-y-1">
-                                <li>• Git repository as source of truth</li>
-                                <li>• ArgoCD application sync patterns</li>
-                                <li>• Terraform state management</li>
-                                <li>• Automated rollback mechanisms</li>
-                            </ul>
-                        </div>
-                        <p class="text-gray-700 text-sm">
-                            Automated GitOps deployment pipeline ensuring consistent and reliable 
-                            application deployments across multiple Kubernetes environments.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Technical Implementation -->
-            <div class="mb-16">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-code mr-3 text-indigo-600"></i>Technical Implementation & Code Samples
-                    </h2>
-                    <div class="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">EKS Cluster Configuration with Terraform</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># Terraform configuration for multi-cloud EKS setup
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = "~> 2.23"
-    }
-    helm = {
-      source  = "hashicorp/helm"
-      version = "~> 2.11"
-    }
-  }
-}
-
-# EKS cluster with enhanced security and observability
-resource "aws_eks_cluster" "main" {
-  name     = "${var.environment}-${var.cluster_name}"
-  role_arn = aws_iam_role.eks_cluster_role.arn
-  version  = var.kubernetes_version
-
-  vpc_config {
-    subnet_ids              = var.subnet_ids
-    endpoint_private_access = true
-    endpoint_public_access  = true
-    public_access_cidrs     = var.public_access_cidrs
-    security_group_ids      = [aws_security_group.eks_cluster.id]
-  }
-
-  # Enable all control plane logging
-  enabled_cluster_log_types = [
-    "api", "audit", "authenticator", "controllerManager", "scheduler"
-  ]
-
-  # Encryption configuration
-  encryption_config {
-    provider {
-      key_arn = aws_kms_key.eks.arn
-    }
-    resources = ["secrets"]
-  }
-
-  tags = merge(local.common_tags, {
-    "kubernetes.io/cluster/${var.environment}-${var.cluster_name}" = "owned"
-  })
-
-  depends_on = [
-    aws_iam_role_policy_attachment.eks_cluster_policy,
-    aws_iam_role_policy_attachment.eks_vpc_resource_controller,
-  ]
-}
-
-# Managed node groups with spot and on-demand instances
-resource "aws_eks_node_group" "main" {
-  cluster_name    = aws_eks_cluster.main.name
-  node_group_name = "${var.environment}-workers"
-  node_role_arn   = aws_iam_role.eks_node_role.arn
-  subnet_ids      = var.private_subnet_ids
-
-  scaling_config {
-    desired_size = var.node_desired_capacity
-    max_size     = var.node_max_capacity
-    min_size     = var.node_min_capacity
-  }
-
-  update_config {
-    max_unavailable_percentage = 25
-  }
-
-  # Mixed instance types for cost optimization
-  instance_types = ["m5.large", "m5.xlarge", "m5.2xlarge"]
-  capacity_type  = "SPOT"
-
-  # Launch template for advanced configuration
-  launch_template {
-    id      = aws_launch_template.eks_nodes.id
-    version = aws_launch_template.eks_nodes.latest_version
-  }
-
-  labels = {
-    Environment = var.environment
-    NodeGroup   = "main"
-    InstanceType = "mixed"
-  }
-
-  # Ensure proper node lifecycle
-  lifecycle {
-    ignore_changes = [scaling_config[0].desired_size]
-  }
-
-  depends_on = [
-    aws_iam_role_policy_attachment.eks_worker_node_policy,
-    aws_iam_role_policy_attachment.eks_cni_policy,
-    aws_iam_role_policy_attachment.eks_container_registry_policy,
-  ]
-}</code></pre>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">IRSA (IAM Roles for Service Accounts) Configuration</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># IRSA configuration for secure service account access
-data "tls_certificate" "eks" {
-  url = aws_eks_cluster.main.identity[0].oidc[0].issuer
-}
-
-resource "aws_iam_openid_connect_provider" "eks" {
-  client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = [data.tls_certificate.eks.certificates[0].sha1_fingerprint]
-  url             = aws_eks_cluster.main.identity[0].oidc[0].issuer
-
-  tags = local.common_tags
-}
-
-# IAM role for AWS Load Balancer Controller
-resource "aws_iam_role" "aws_load_balancer_controller" {
-  name = "${var.environment}-aws-load-balancer-controller"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRoleWithWebIdentity"
-        Effect = "Allow"
-        Principal = {
-          Federated = aws_iam_openid_connect_provider.eks.arn
-        }
-        Condition = {
-          StringEquals = {
-            "${replace(aws_iam_openid_connect_provider.eks.url, "https://", "")}:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
-            "${replace(aws_iam_openid_connect_provider.eks.url, "https://", "")}:aud": "sts.amazonaws.com"
-          }
-        }
-      }
-    ]
-  })
-
-  tags = local.common_tags
-}
-
-resource "aws_iam_role_policy_attachment" "aws_load_balancer_controller" {
-  policy_arn = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
-  role       = aws_iam_role.aws_load_balancer_controller.name
-}
-
-# Service account for AWS Load Balancer Controller
-resource "kubernetes_service_account" "aws_load_balancer_controller" {
-  metadata {
-    name      = "aws-load-balancer-controller"
-    namespace = "kube-system"
-    labels = {
-      "app.kubernetes.io/component" = "controller"
-      "app.kubernetes.io/name"      = "aws-load-balancer-controller"
-    }
-    annotations = {
-      "eks.amazonaws.com/role-arn" = aws_iam_role.aws_load_balancer_controller.arn
-    }
-  }
-
-  depends_on = [aws_eks_cluster.main]
-}</code></pre>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">ArgoCD Configuration for GitOps</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># ArgoCD installation and configuration
-resource "helm_release" "argocd" {
-  name       = "argocd"
-  repository = "https://argoproj.github.io/argo-helm"
-  chart      = "argo-cd"
-  namespace  = "argocd"
-  version    = "5.46.8"
-
-  create_namespace = true
-
-  values = [
-    yamlencode({
-      global = {
-        image = {
-          tag = "v2.8.4"
-        }
-      }
-      
-      server = {
-        service = {
-          type = "LoadBalancer"
-          annotations = {
-            "service.beta.kubernetes.io/aws-load-balancer-type" = "nlb"
-            "service.beta.kubernetes.io/aws-load-balancer-internal" = "true"
-          }
-        }
-        
-        config = {
-          "application.instanceLabelKey" = "argocd.argoproj.io/instance"
-          "server.insecure" = true
-          "oidc.config" = yamlencode({
-            name = "OIDC"
-            issuer = var.oidc_issuer_url
-            clientId = var.oidc_client_id
-            clientSecret = "$oidc.clientSecret"
-            requestedScopes = ["openid", "profile", "email", "groups"]
-            requestedIDTokenClaims = {
-              groups = {
-                essential = true
-              }
-            }
-          })
-        }
-        
-        rbacConfig = {
-          "policy.default" = "role:readonly"
-          "policy.csv" = <<-EOT
-            p, role:admin, applications, *, */*, allow
-            p, role:admin, clusters, *, *, allow
-            p, role:admin, repositories, *, *, allow
-            
-            g, argocd-admins, role:admin
-          EOT
-        }
-      }
-      
-      repoServer = {
-        replicas = 2
-        resources = {
-          limits = {
-            cpu = "1000m"
-            memory = "1Gi"
-          }
-          requests = {
-            cpu = "500m"
-            memory = "512Mi"
-          }
-        }
-      }
-      
-      controller = {
-        replicas = 1
-        resources = {
-          limits = {
-            cpu = "2000m"
-            memory = "2Gi"
-          }
-          requests = {
-            cpu = "1000m"
-            memory = "1Gi"
-          }
-        }
-        metrics = {
-          enabled = true
-          serviceMonitor = {
-            enabled = true
-          }
-        }
-      }
-    })
-  ]
-
-  depends_on = [aws_eks_cluster.main]
-}</code></pre>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">Application Deployment Manifest</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># ArgoCD Application for microservice deployment
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: user-service
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  
-  source:
-    repoURL: https://github.com/highspot/user-service
-    targetRevision: HEAD
-    path: k8s/overlays/production
-    
-    # Kustomize configuration
-    kustomize:
-      images:
-        - name: user-service
-          newTag: "v1.2.3"
-      patchesStrategicMerge:
-        - deployment-patch.yaml
-  
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: user-service
-  
-  # Sync policy for automated deployment
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: false
-    syncOptions:
-      - CreateNamespace=true
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true
-    retry:
-      limit: 5
-      backoff:
-        duration: 5s
-        factor: 2
-        maxDuration: 3m
-  
-  # Health check configuration
-  ignoreDifferences:
-    - group: apps
-      kind: Deployment
-      jsonPointers:
-        - /spec/replicas
-  
-  # Resource hooks for deployment coordination
-  operation:
-    syncOptions:
-      - CreateNamespace=true
-    retry:
-      limit: 5
-
----
-# Application configuration via ConfigMap
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: user-service-config
-  namespace: user-service
-data:
-  database.yaml: |
-    database:
-      host: rds.internal.highspot.com
-      port: 5432
-      name: user_service_prod
-      ssl_mode: require
-      max_connections: 100
-      connection_timeout: 30s
-  
-  monitoring.yaml: |
-    metrics:
-      enabled: true
-      port: 9090
-      path: /metrics
-    
-    tracing:
-      enabled: true
-      jaeger_endpoint: http://jaeger-collector:14268/api/traces
-      sampling_rate: 0.1
-    
-    logging:
-      level: info
-      format: json
-      output: stdout</code></pre>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <h5 class="font-semibold text-blue-800 mb-2">
-                            <i class="fab fa-github mr-2"></i>Repository Links
-                        </h5>
-                        <ul class="text-blue-700 text-sm space-y-1">
-                            <li><a href="#" class="hover:underline">→ EKS Terraform Modules</a></li>
-                            <li><a href="#" class="hover:underline">→ ArgoCD GitOps Configurations</a></li>
-                            <li><a href="#" class="hover:underline">→ IRSA Security Templates</a></li>
-                            <li><a href="#" class="hover:underline">→ Multi-Cloud K8s Patterns</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <h5 class="font-semibold text-green-800 mb-2">
-                            <i class="fas fa-file-code mr-2"></i>Technical Documentation
-                        </h5>
-                        <ul class="text-green-700 text-sm space-y-1">
-                            <li><a href="#" class="hover:underline">→ Multi-Cloud Architecture Guide</a></li>
-                            <li><a href="#" class="hover:underline">→ EKS Security Best Practices</a></li>
-                            <li><a href="#" class="hover:underline">→ GitOps Deployment Standards</a></li>
-                            <li><a href="#" class="hover:underline">→ Service Mesh Integration</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Amazon EKS, Azure AKS (conceptual), Kubernetes, Docker, Terraform, ArgoCD, AWS IAM, Prometheus, New Relic, External Secrets Operator (ESO).</p>
             </div>
 
             <div class="detail-section">
-                <h3>Development Practices & Quality Assurance</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
-                            <i class="fas fa-vial mr-2 text-purple-600"></i>Kubernetes Testing Strategy
-                        </h4>
-                        <div class="space-y-3">
-                            <div class="bg-purple-50 p-3 rounded">
-                                <h5 class="font-medium text-purple-800">Infrastructure Testing</h5>
-                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
-                                    <li>• EKS cluster provisioning validation</li>
-                                    <li>• IRSA security policy verification</li>
-                                    <li>• Network connectivity and security group testing</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-purple-50 p-3 rounded">
-                                <h5 class="font-medium text-purple-800">Application Deployment Testing</h5>
-                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
-                                    <li>• ArgoCD GitOps workflow validation</li>
-                                    <li>• Multi-environment deployment testing</li>
-                                    <li>• Service mesh integration verification</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
-                            <i class="fab fa-git-alt mr-2 text-orange-600"></i>Multi-Cloud Operations
-                        </h4>
-                        <div class="space-y-3">
-                            <div class="bg-orange-50 p-3 rounded">
-                                <h5 class="font-medium text-orange-800">GitOps Deployment Pipeline</h5>
-                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
-                                    <li>• Git-based configuration management</li>
-                                    <li>• Automated application synchronization</li>
-                                    <li>• Progressive rollout and canary deployments</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-orange-50 p-3 rounded">
-                                <h5 class="font-medium text-orange-800">Security & Compliance</h5>
-                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
-                                    <li>• IRSA implementation for least privilege access</li>
-                                    <li>• Pod security standards enforcement</li>
-                                    <li>• Network policy and security scanning</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                        <i class="fas fa-shield-alt mr-2 text-green-600"></i>Migration Success Metrics
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-blue-600">99.9%</div>
-                            <div class="text-sm text-gray-600">System Uptime</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-green-600">50%</div>
-                            <div class="text-sm text-gray-600">Operational Overhead Reduction</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-purple-600">100%</div>
-                            <div class="text-sm text-gray-600">GitOps Automation</div>
-                        </div>
-                    </div>
-                </div>
+                <h3>Challenge</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Highspot's core services were deployed across a mix of disparate and legacy infrastructure, including various Kubernetes platforms and older container orchestration systems. This created significant limitations in achieving consistent dynamic scalability, ensuring uniform reliability, and incurred high operational overhead due to fragmented management and maintenance across different cloud providers (e.g., AWS EKS, Azure AKS). The lack of a unified, modern approach hindered rapid development and efficient resource utilization, creating bottlenecks for growth in a multi-cloud landscape.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Developed meticulous migration strategies for transitioning services between different Kubernetes platforms (e.g., to Amazon EKS, and conceptualizing/planning for Azure AKS integrations).</li>
+                    <li>Utilized Terraform to provision and manage Kubernetes clusters (EKS, and defining patterns for AKS) in a declarative manner, focusing on cluster setup, worker node groups, and core service configurations.</li>
+                    <li>Collaborated closely with various development teams to containerize and optimize core services for various Kubernetes environments.</li>
+                    <li>Integrated deployment processes into existing CI/CD pipelines (e.g., using Buildkite for builds and tests, and ArgoCD for declarative Kubernetes deployments) for consistent and automated rollouts across different K8s platforms.</li>
+                    <li>Implemented stringent security configurations within Kubernetes clusters, including fine-grained AWS IAM roles for Kubernetes service accounts (IRSA for EKS) and integrating with External Secrets Operator (ESO) for secure secret management across cloud boundaries.</li>
+                    <li>Ensured seamless integration with unified observability stacks (Prometheus-Operator for metrics, New Relic for metrics, logs, and traces) to provide comprehensive, real-time monitoring of cluster health and application performance across multi-cloud K8s deployments.</li>
+                    <li>Actively debugged complex deployment issues and optimized resource allocation (CPU and memory limits) for pods across diverse Kubernetes environments to achieve optimal performance, stability, and cost efficiency.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Successfully directed the migration and optimization of critical core services to modern Kubernetes platforms (like Amazon EKS), demonstrating capabilities in managing multi-cloud containerized environments.</li>
+                    <li>This resulted in significantly enhanced scalability and improved reliability across diverse cloud footprints.</li>
+                    <li>The transition reduced operational overhead by automating infrastructure provisioning and streamlining cluster management, leading to improved resource utilization and tangible cost efficiency.</li>
+                    <li>The established multi-cloud Kubernetes foundation provides a resilient and agile base for future service development and innovation.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This project demonstrated senior-level capabilities in architecture, planning, and execution within complex multi-cloud Kubernetes environments. My leadership in driving infrastructure transitions and optimizing core services across platforms like EKS (and understanding the patterns for AKS) was crucial. The project not only modernized Highspot's core services but also laid a robust foundation for future growth and operational excellence in a multi-cloud strategy.
+                </p>
             </div>
 
             <div class="mt-8 flex justify-center space-x-4">
@@ -682,97 +80,13 @@ data:
                     <i class="fas fa-home"></i> <span>Back to Home</span>
                 </a>
             </div>
-
-        <!-- Project Navigation Section -->
-
-            <!-- Key Technologies -->
-            <div class="mb-16">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-tools mr-3 text-blue-600"></i>Key Technologies & Tools
-                    </h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="bg-white rounded-lg p-4 shadow-lg text-center border-l-4 border-blue-600">
-                        <i class="fas fa-cube text-blue-600 text-2xl mb-2"></i>
-                        <p class="font-semibold text-gray-800">Amazon EKS</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-4 shadow-lg text-center border-l-4 border-indigo-600">
-                        <i class="fas fa-cloud text-indigo-600 text-2xl mb-2"></i>
-                        <p class="font-semibold text-gray-800">Azure AKS</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-4 shadow-lg text-center border-l-4 border-green-600">
-                        <i class="fas fa-code-branch text-green-600 text-2xl mb-2"></i>
-                        <p class="font-semibold text-gray-800">Terraform</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-4 shadow-lg text-center border-l-4 border-orange-600">
-                        <i class="fas fa-sync text-orange-600 text-2xl mb-2"></i>
-                        <p class="font-semibold text-gray-800">ArgoCD</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-4 shadow-lg text-center border-l-4 border-purple-600">
-                        <i class="fas fa-key text-purple-600 text-2xl mb-2"></i>
-                        <p class="font-semibold text-gray-800">AWS IAM</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-4 shadow-lg text-center border-l-4 border-red-600">
-                        <i class="fas fa-ship text-red-600 text-2xl mb-2"></i>
-                        <p class="font-semibold text-gray-800">Docker</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Navigation -->
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Explore More Projects</h3>
-                    <p class="text-gray-600">Discover other cloud architecture and infrastructure achievements</p>
-                </div>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="observability-migration.html" class="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                        <i class="fas fa-chart-line mr-2"></i>Observability Migration
-                    </a>
-                    <a href="feature-flag-system.html" class="inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                        <i class="fas fa-flag mr-2"></i>Feature Flag System
-                    </a>
-                    <a href="projects.html" class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        <i class="fas fa-folder-open mr-2"></i>All Projects
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section class="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-indigo-800">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center text-white">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Ready for Multi-Cloud Modernization?
-                </h2>
-                <p class="text-xl mb-8 opacity-90 leading-relaxed">
-                    Let's discuss how my Kubernetes and cloud architecture expertise can modernize 
-                    your infrastructure and improve operational efficiency.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#" onclick="openContactModal()" 
-                       class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-envelope mr-2"></i>Discuss Your Architecture
-                    </a>
-                    <a href="skills-graphical.html" 
-                       class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-tools mr-2"></i>View Technical Skills
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Placeholder for Footer -->
+    <!-- Placeholder for Footer - REPLACED EXISTING FOOTER -->
     <div id="footer-placeholder"></div>
 
-    <!-- Placeholder for Contact Modal HTML Structure -->
+    <!-- Placeholder for Contact Modal HTML Structure - REPLACED EXISTING MODAL -->
     <div id="contact-modal-placeholder"></div>
 
     <!-- Link to external JavaScript file -->
