@@ -16,256 +16,87 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="antialiased">
-    <!-- Placeholder for Header/Navigation Bar -->
+    <!-- Placeholder for Header/Navigation Bar - NEW -->
     <div id="header-placeholder"></div>
 
     <!-- Hero Section: Main Introduction -->
-    <section id="hero" class="bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 text-white py-16 md:py-24 lg:py-32 text-center relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 bg-black opacity-10"></div>
-        <div class="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div class="absolute bottom-10 right-10 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        
-        <div class="container mx-auto px-4 max-w-6xl relative z-10">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-                    <span class="block">Pratik Ghose</span>
-                </h1>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-8 opacity-90 animate-fade-in-up delay-100">
-                    <span class="text-yellow-300">Turning Complex Problems</span><br>
-                    <span class="text-blue-200">into Elegant Engineering</span>
-                </h2>
-                <p class="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed animate-fade-in-up delay-200 max-w-3xl mx-auto">
-                    Engineering cloud infrastructure and backend systems for <span class="text-green-300 font-semibold">performance</span>, 
-                    <span class="text-blue-300 font-semibold">clarity</span>, and <span class="text-yellow-300 font-semibold">cost efficiency</span>.
-                </p>
-                
-                <!-- Impact Metrics -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in-up delay-300">
-                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 hover:bg-opacity-20 transition-all">
-                        <div class="text-3xl font-bold text-green-300 mb-2">$720K+</div>
-                        <div class="text-sm opacity-90">Annual Cost Savings</div>
-                    </div>
-                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 hover:bg-opacity-20 transition-all">
-                        <div class="text-3xl font-bold text-blue-300 mb-2">85%</div>
-                        <div class="text-sm opacity-90">Metrics Reduction</div>
-                    </div>
-                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 hover:bg-opacity-20 transition-all">
-                        <div class="text-3xl font-bold text-purple-300 mb-2">5+ Years</div>
-                        <div class="text-sm opacity-90">Engineering Excellence</div>
-                    </div>
-                </div>
-                
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up delay-400">
-                    <a href="#" onclick="openContactModal()" 
-                       class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center text-lg shadow-lg">
-                        <i class="fas fa-envelope mr-2"></i>Get In Touch
-                    </a>
-                    <a href="projects.html" 
-                       class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center text-lg">
-                        <i class="fas fa-folder-open mr-2"></i>View My Work
-                    </a>
-                </div>
-                
-                <!-- Social Links -->
-                <div class="flex justify-center space-x-6 mt-8 animate-fade-in-up delay-500">
-                    <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" 
-                       class="text-white hover:text-blue-300 transition-colors text-2xl">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/pratikgh0se" target="_blank" 
-                       class="text-white hover:text-gray-300 transition-colors text-2xl">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://drive.google.com/file/d/16BjMdqHKV8iKslX9TIvHxV0xbT8zN1Pe/view?usp=sharing" 
-                       target="_blank" class="text-white hover:text-red-300 transition-colors text-2xl">
-                        <i class="fas fa-file-pdf"></i>
-                    </a>
-                </div>
+    <section id="hero" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 text-center rounded-b-lg shadow-lg">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                Pratik Ghose
+            </h1>
+            <h1 class="text-2xl md:text-3xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                Turning Complex Problems into Elegant Engineering.
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up delay-100">
+                Engineering cloud infrastructure and backend systems for performance, clarity, and cost efficiency.
+                <!-- Driving Observability, Infrastructure Cost Optimization, and Scalable Solutions -->
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up delay-200">
+                <!-- Social Media and Resume Links -->
+                <a href="https://www.linkedin.com/in/pratikghose/" target="_blank" 
+                   class="btn-primary flex items-center justify-center space-x-2 px-6 py-3 text-base sm:text-lg">
+                    <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/pratikgh0se" target="_blank" 
+                   class="btn-primary flex items-center justify-center space-x-2 px-6 py-3 text-base sm:text-lg">
+                    <i class="fab fa-github"></i> <span>GitHub</span>
+                </a>
+                <a href="https://drive.google.com/file/d/16BjMdqHKV8iKslX9TIvHxV0xbT8zN1Pe/view?usp=sharing" 
+                   target="_blank" class="btn-primary flex items-center justify-center space-x-2 px-6 py-3 text-base sm:text-lg">
+                    <i class="fas fa-file-pdf"></i> <span>Resume</span>
+                </a>
             </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
         </div>
     </section>
 
-    <!-- About Me Section: Core Expertise Summary -->
+    <!-- About Me Section: Concise Core Expertise Summary -->
     <section id="about" class="py-16 md:py-20 container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="section-heading text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                    <i class="fas fa-code mr-3 text-blue-600"></i>My Core Expertise
-                </h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Specializing in DevOps, Cloud Engineering, and Observability with a focus on 
-                    designing robust, scalable, and cost-efficient systems
-                </p>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-600 mb-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Technical Foundation</h3>
-                        <ul class="space-y-4 text-lg text-gray-700">
-                            <li class="flex items-start">
-                                <i class="fas fa-cloud text-blue-600 mt-1 mr-3"></i>
-                                <div>
-                                    <strong class="text-blue-800">Cloud Platforms & Infrastructure:</strong> 
-                                    AWS, GCP, Azure, Kubernetes, Terraform, Docker, and IaC for resilient architectures
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-cogs text-orange-600 mt-1 mr-3"></i>
-                                <div>
-                                    <strong class="text-orange-800">DevOps & CI/CD Practices:</strong> 
-                                    Automation, GitOps, Feature Flagging, and orchestrating end-to-end CI/CD pipelines
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-chart-line text-purple-600 mt-1 mr-3"></i>
-                                <div>
-                                    <strong class="text-purple-800">Observability Engineering:</strong> 
-                                    Metric optimization, log management, distributed tracing, and advanced alerting
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Strategic Impact</h3>
-                        <ul class="space-y-4 text-lg text-gray-700">
-                            <li class="flex items-start">
-                                <i class="fas fa-code text-green-600 mt-1 mr-3"></i>
-                                <div>
-                                    <strong class="text-green-800">Backend Development & APIs:</strong> 
-                                    Go, Python, Clojure, Java, REST API Design, and resilient distributed systems
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-brain text-red-600 mt-1 mr-3"></i>
-                                <div>
-                                    <strong class="text-red-800">Problem Solving & Systems Thinking:</strong> 
-                                    Root Cause Analysis, Cost Optimization, and Incident Response
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-users text-indigo-600 mt-1 mr-3"></i>
-                                <div>
-                                    <strong class="text-indigo-800">Leadership & Strategy:</strong> 
-                                    Technical leadership, cross-functional collaboration, and strategic planning
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mt-8 text-center">
-                    <a href="skills-graphical.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-lg">
-                        <span>Explore my detailed skills overview</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
+        <h2 class="text-3xl font-bold text-gray-800 section-heading mb-8">My Core Expertise</h2>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                As a Software Development Engineer specializing in DevOps, Cloud Engineering, and Observability, my expertise is focused on designing, building, and optimizing robust, scalable, and cost-efficient systems. I bring a strong background in:
+            </p>
+            <ul class="list-disc list-inside text-lg text-gray-700 leading-relaxed mb-4">
+                <li><strong>Cloud Platforms & Infrastructure:</strong> AWS, GCP, Azure, Kubernetes, Terraform, Docker, and IaC for resilient architectures.</li>
+                <li><strong>DevOps & CI/CD Practices:</strong> Automation, GitOps, Feature Flagging, and orchestrating end-to-end CI/CD pipelines.</li>
+                <li><strong>Observability Engineering:</strong> Metric optimization, log management, distributed tracing, and advanced alerting for system health.</li>
+                <li><strong>Backend Development & APIs:</strong> Go, Python, Clojure, Java, REST API Design, Microservices, and building resilient distributed systems.</li>
+                <li><strong>Problem Solving & Systems Thinking:</strong> Root Cause Analysis, Cost Optimization, and Incident Response to drive efficiency.</li>
+                <li><strong>Leadership & Strategic Capabilities:</strong> Technical leadership, cross-functional collaboration, mentorship, and strategic planning to deliver measurable business value.</li>
+            </ul>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                My work consistently translates into significant operational efficiencies, substantial cost savings, and accelerated delivery cycles. For a detailed breakdown of my capabilities and the tools I master, please visit my dedicated <a href="skills-graphical.html" class="text-blue-600 hover:underline font-semibold">Skills Overview page</a>.
+            </p>
         </div>
     </section>
 
-    <!-- My Key Skills Section -->
-    <section id="key-skills" class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <!-- My Key Skills Section (Content will be loaded dynamically by main.js) -->
+    <section id="key-skills" class="py-16 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="section-heading text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-tools mr-3 text-green-600"></i>My Key Skills
-                    </h2>
-                    <div class="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
-                </div>
-                
-                <!-- Dynamic content will be loaded here by main.js -->
-                <div id="key-skills-content" class="bg-white rounded-xl shadow-lg p-8">
-                    <div class="text-center text-gray-500">
-                        <i class="fas fa-spinner fa-spin text-2xl mb-4"></i>
-                        <p>Loading key skills...</p>
-                    </div>
-                </div>
+            <h2 class="text-3xl font-bold text-gray-800 section-heading mb-8">My Key Skills</h2>
+            <!-- Dynamic content will be loaded here by main.js -->
+            <div id="key-skills-content" class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-center text-gray-500">Loading key skills...</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section: Featured Projects -->
+    <!-- Projects Section: Featured Projects (Content will be loaded dynamically by main.js) -->
     <section id="projects" class="py-16 md:py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="section-heading text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-rocket mr-3 text-purple-600"></i>Featured Projects
-                    </h2>
-                    <div class="w-24 h-1 bg-purple-600 mx-auto mb-8"></div>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Explore my most impactful projects showcasing technical excellence, 
-                        measurable business value, and innovative solutions
-                    </p>
-                </div>
-                
-                <!-- Dynamic content will be loaded here by main.js -->
-                <div id="featured-projects-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="col-span-full text-center text-gray-500">
-                        <i class="fas fa-spinner fa-spin text-2xl mb-4"></i>
-                        <p>Loading featured projects...</p>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="projects.html" class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors text-lg shadow-lg">
-                        <span>View All Projects</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
+            <h2 class="text-3xl font-bold text-gray-800 section-heading mb-8">Featured Projects</h2>
+            <!-- Dynamic content will be loaded here by main.js -->
+            <div id="featured-projects-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <p class="text-center text-gray-500 col-span-full">Loading featured projects...</p>
             </div>
         </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section class="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-purple-700">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center text-white">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Ready to Transform Your Infrastructure?
-                </h2>
-                <p class="text-xl mb-8 opacity-90 leading-relaxed">
-                    Let's discuss how my expertise in cloud engineering, observability, 
-                    and backend systems can drive measurable value for your organization.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                    <a href="#" onclick="openContactModal()" 
-                       class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-envelope mr-2"></i>Start a Conversation
-                    </a>
-                    <a href="about.html" 
-                       class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-user mr-2"></i>Learn More About Me
-                    </a>
-                    <a href="blog.html" 
-                       class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-blog mr-2"></i>Read My Insights
-                    </a>
-                </div>
-                
-                <div class="text-sm opacity-80">
-                    <p><i class="fas fa-map-marker-alt mr-2"></i>Open to remote opportunities worldwide</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Placeholder for Footer -->
+    <!-- Placeholder for Footer - NEW -->
     <div id="footer-placeholder"></div>
 
-    <!-- Placeholder for Contact Modal HTML Structure -->
+    <!-- Placeholder for Contact Modal HTML Structure - NEW -->
     <div id="contact-modal-placeholder"></div>
 
     <!-- Link to external JavaScript file -->

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Feature Flag System & Infrastructure | Pratik Ghose</title>
-    <!-- Favicon: A simple cloud icon as SVG -->
+    <title>Project: Decentralized Feature Flag System | Pratik Ghose</title>
+    <!-- Favicon: A simple cloud icon as SVG - ADDED -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.86 2.53-7.58 6.04C2.71 10.75 1 12.68 1 15c0 3.31 2.69 6 6 6h12c3.31 0 6-2.69 6-6 0-2.68-1.71-4.91-4.65-5.96zM12 6c2.76 0 5 2.24 5 5h-2c0-1.66-1.34-3-3-3s-3 1.34-3 3H7c0-2.76 2.24-5 5-5z'/></svg>" type="image/svg+xml">
     <!-- Link to Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -16,747 +16,72 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="antialiased">
-    <!-- Placeholder for Header/Navigation Bar -->
+    <!-- Placeholder for Header/Navigation Bar - REPLACED EXISTING HEADER -->
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="py-12 md:py-16 bg-gradient-to-br from-indigo-600 to-purple-800 text-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <div class="mb-4">
-                            <span class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                <i class="fas fa-flag mr-2"></i>Feature Management & DevOps
-                            </span>
-                        </div>
-                        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                            Decentralized Feature Flag System & Infrastructure
-                        </h1>
-                        <p class="text-xl mb-6 opacity-90 leading-relaxed">
-                            Architected and implemented a comprehensive <span class="text-yellow-300 font-semibold">decentralized feature flag system</span> 
-                            enabling <span class="text-green-300 font-semibold">safe deployment patterns</span> and 
-                            <span class="text-blue-300 font-semibold">enhanced development velocity</span>.
-                        </p>
-                        <div class="flex flex-wrap gap-3 mb-6">
-                            <span class="bg-indigo-500 px-3 py-1 rounded-full text-sm">LaunchDarkly</span>
-                            <span class="bg-purple-500 px-3 py-1 rounded-full text-sm">Clojure</span>
-                            <span class="bg-green-500 px-3 py-1 rounded-full text-sm">Kubernetes</span>
-                            <span class="bg-orange-500 px-3 py-1 rounded-full text-sm">ESO</span>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-green-300">Decentralized</div>
-                            <div class="text-sm opacity-90">Architecture</div>
-                        </div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-blue-300">Multi-Service</div>
-                            <div class="text-sm opacity-90">Integration</div>
-                        </div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-purple-300">Safe Deploy</div>
-                            <div class="text-sm opacity-90">Patterns</div>
-                        </div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl font-bold text-orange-300">Zero Config</div>
-                            <div class="text-sm opacity-90">Setup</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="py-12 bg-gradient-to-br from-gray-50 to-indigo-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-indigo-600">
-                        <i class="fas fa-building text-indigo-600 text-2xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Company</h3>
-                        <p class="text-gray-600">Highspot</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-purple-600">
-                        <i class="fas fa-calendar text-purple-600 text-2xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Duration</h3>
-                        <p class="text-gray-600">April 2024 - Present</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-600">
-                        <i class="fas fa-flag text-green-600 text-2xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Scope</h3>
-                        <p class="text-gray-600">Enterprise feature management platform</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
+    <!-- Project Detail Section -->
     <section class="py-16 md:py-20 container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-            
-            <!-- Project Summary -->
-            <div class="mb-16">
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-indigo-600">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-flag text-indigo-600 mr-3"></i>Project Overview
-                    </h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Designed and implemented a comprehensive decentralized feature flag system at Highspot, enabling safe 
-                        deployment patterns, enhanced development velocity, and improved operational control. The system provides 
-                        seamless integration across multiple services with zero-configuration setup and robust security practices.
-                    </p>
-                </div>
-            </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 section-heading mb-8">Decentralized Feature Flag System with LaunchDarkly</h1>
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <p class="text-lg text-gray-700 mb-2"><span class="font-semibold">Company:</span> Highspot</p>
+            <p class="text-lg text-gray-700 mb-4"><span class="font-semibold">Dates:</span> April 2024 - Present</p>
 
-            <!-- Challenge & Solution -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-red-600">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>Challenge
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Highspot's development teams needed a robust feature flag system to enable safe deployment patterns, 
-                        A/B testing capabilities, and gradual feature rollouts. The existing manual configuration approach 
-                        was error-prone, lacked centralized management, and hindered rapid development cycles across multiple 
-                        microservices architectures.
-                    </p>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-600">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-lightbulb text-green-600 mr-3"></i>Solution Impact
-                    </h3>
-                    <div class="space-y-3 text-gray-700">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Decentralized architecture for service autonomy</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Zero-configuration setup with automated deployment</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Secure secret management via External Secrets Operator</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span>Enhanced development velocity and deployment safety</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Designed, developed, and implemented a robust, decentralized feature flag system using LaunchDarkly across multiple microservices. This initiative aimed to enable controlled feature rollouts, A/B testing, and dynamic configuration updates, significantly reducing deployment risk and solving rigid deployment cycles.
+            </p>
 
-            <!-- System Architecture -->
-            <div class="mb-16">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-sitemap mr-3 text-indigo-600"></i>System Architecture & Design
-                    </h2>
-                    <div class="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4">
-                            <i class="fas fa-flag text-indigo-600 mr-2"></i>Decentralized Feature Flag Architecture
-                        </h4>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                            <p class="text-gray-700 text-sm italic mb-2">Diagram Placeholder: Feature flag architecture showing:</p>
-                            <ul class="text-gray-600 text-sm space-y-1">
-                                <li>• LaunchDarkly integration with service mesh</li>
-                                <li>• Decentralized flag evaluation per service</li>
-                                <li>• External Secrets Operator for secure token management</li>
-                                <li>• Zero-config deployment patterns</li>
-                            </ul>
-                        </div>
-                        <p class="text-gray-700 text-sm">
-                            Comprehensive feature flag system enabling independent service deployments 
-                            with centralized management and decentralized execution.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4">
-                            <i class="fas fa-shield-alt text-green-600 mr-2"></i>Security & Secret Management
-                        </h4>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                            <p class="text-gray-700 text-sm italic mb-2">Diagram Placeholder: Security flow showing:</p>
-                            <ul class="text-gray-600 text-sm space-y-1">
-                                <li>• AWS Secrets Manager integration</li>
-                                <li>• ESO automated secret rotation</li>
-                                <li>• Service-specific token isolation</li>
-                                <li>• Kubernetes-native secret distribution</li>
-                            </ul>
-                        </div>
-                        <p class="text-gray-700 text-sm">
-                            Robust security architecture ensuring secure token management and 
-                            automated secret rotation across the feature flag infrastructure.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Technical Implementation -->
-            <div class="mb-16">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        <i class="fas fa-code mr-3 text-purple-600"></i>Technical Implementation & Code Samples
-                    </h2>
-                    <div class="w-24 h-1 bg-purple-600 mx-auto mb-8"></div>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">LaunchDarkly Integration (Clojure)</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code>;; Clojure implementation for LaunchDarkly feature flag integration
-(ns feature-flags.core
-  (:require [clojure.tools.logging :as log]
-            [environ.core :refer [env]]
-            [cheshire.core :as json])
-  (:import [com.launchdarkly.sdk LDUser LDValue]
-           [com.launchdarkly.sdk.server LDClient LDConfig]))
-
-(defn create-ld-config
-  "Create LaunchDarkly configuration with enhanced settings"
-  [sdk-key]
-  (-> (LDConfig/builder)
-      (.sdkKey sdk-key)
-      (.offline false)
-      (.allAttributesPrivate true)
-      (.events true)
-      (.diagnosticOptOut false)
-      (.build)))
-
-(defn create-user-context
-  "Create LaunchDarkly user context with team and environment attributes"
-  [user-id team environment]
-  (-> (LDUser/builder user-id)
-      (.custom "team" team)
-      (.custom "environment" environment)
-      (.custom "service" (env :service-name "unknown"))
-      (.build)))
-
-(defprotocol FeatureFlagService
-  (get-flag [this flag-key user-context default-value])
-  (get-json-flag [this flag-key user-context default-value])
-  (all-flags [this user-context])
-  (close [this]))
-
-(defrecord LaunchDarklyService [^LDClient client]
-  FeatureFlagService
-  
-  (get-flag [this flag-key user-context default-value]
-    (try
-      (let [flag-value (.boolVariation client flag-key user-context default-value)]
-        (log/debug "Feature flag" flag-key "evaluated to" flag-value "for user" (.getKey user-context))
-        flag-value)
-      (catch Exception e
-        (log/error e "Failed to evaluate feature flag" flag-key)
-        default-value)))
-  
-  (get-json-flag [this flag-key user-context default-value]
-    (try
-      (let [json-value (.jsonValueVariation client flag-key user-context (LDValue/of default-value))
-            parsed-value (json/parse-string (.toJsonString json-value) true)]
-        (log/debug "JSON feature flag" flag-key "evaluated for user" (.getKey user-context))
-        parsed-value)
-      (catch Exception e
-        (log/error e "Failed to evaluate JSON feature flag" flag-key)
-        default-value)))
-  
-  (all-flags [this user-context]
-    (try
-      (let [flags (.allFlagsState client user-context)]
-        (into {} (map (fn [[k v]] [k (.getValue v)]) (.asMap flags))))
-      (catch Exception e
-        (log/error e "Failed to get all flags for user" (.getKey user-context))
-        {})))
-  
-  (close [this]
-    (when client
-      (.close client))))
-
-(defn create-feature-flag-service
-  "Initialize LaunchDarkly service with configuration"
-  []
-  (let [sdk-key (env :launchdarkly-sdk-key)]
-    (if sdk-key
-      (do
-        (log/info "Initializing LaunchDarkly service")
-        (let [config (create-ld-config sdk-key)
-              client (LDClient. config)]
-          (if (.isInitialized client)
-            (do
-              (log/info "LaunchDarkly client initialized successfully")
-              (->LaunchDarklyService client))
-            (do
-              (log/warn "LaunchDarkly client failed to initialize, using offline mode")
-              nil))))
-      (do
-        (log/warn "LaunchDarkly SDK key not found, feature flags disabled")
-        nil))))
-
-;; Feature flag evaluation helpers
-(defn evaluate-feature-flag
-  "Evaluate a feature flag with user context"
-  [flag-service flag-key {:keys [user-id team environment]} default-value]
-  (if flag-service
-    (let [user-context (create-user-context user-id team environment)]
-      (get-flag flag-service flag-key user-context default-value))
-    default-value))
-
-(defn with-feature-flag
-  "Conditional execution based on feature flag"
-  [flag-service flag-key user-context then-fn else-fn]
-  (if (evaluate-feature-flag flag-service flag-key user-context false)
-    (then-fn)
-    (else-fn)))
-
-;; Example usage in service layer
-(defn process-user-request
-  "Example service function using feature flags"
-  [flag-service request]
-  (let [user-context {:user-id (:user-id request)
-                     :team (:team request)
-                     :environment "production"}]
-    
-    ;; Example: New authentication flow
-    (if (evaluate-feature-flag flag-service "new-auth-flow" user-context false)
-      (do
-        (log/info "Using new authentication flow for user" (:user-id request))
-        (new-authentication-handler request))
-      (do
-        (log/info "Using legacy authentication flow for user" (:user-id request))
-        (legacy-authentication-handler request)))
-    
-    ;; Example: Dynamic configuration
-    (let [cache-config (evaluate-feature-flag 
-                        flag-service 
-                        "cache-configuration" 
-                        user-context 
-                        {:ttl 3600 :max-size 1000})]
-      (configure-cache cache-config))
-    
-    ;; Example: Progressive feature rollout
-    (when (evaluate-feature-flag flag-service "analytics-v2" user-context false)
-      (send-analytics-v2 request))))</code></pre>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">External Secrets Operator Configuration</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># Kubernetes ESO configuration for secure LaunchDarkly token management
-apiVersion: external-secrets.io/v1beta1
-kind: SecretStore
-metadata:
-  name: aws-secrets-manager
-  namespace: feature-flags
-spec:
-  provider:
-    aws:
-      service: SecretsManager
-      region: us-west-2
-      auth:
-        jwt:
-          serviceAccountRef:
-            name: external-secrets-sa
-
----
-# External Secret for LaunchDarkly SDK keys
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  name: launchdarkly-secrets
-  namespace: feature-flags
-spec:
-  refreshInterval: 300s  # 5 minutes
-  secretStoreRef:
-    name: aws-secrets-manager
-    kind: SecretStore
-  
-  target:
-    name: launchdarkly-sdk-keys
-    creationPolicy: Owner
-    template:
-      type: Opaque
-      data:
-        production-sdk-key: "{{ .productionSdkKey }}"
-        staging-sdk-key: "{{ .stagingSdkKey }}"
-        mobile-sdk-key: "{{ .mobileSdkKey }}"
-  
-  data:
-  - secretKey: productionSdkKey
-    remoteRef:
-      key: feature-flags/launchdarkly
-      property: production_sdk_key
-  - secretKey: stagingSdkKey
-    remoteRef:
-      key: feature-flags/launchdarkly
-      property: staging_sdk_key
-  - secretKey: mobileSdkKey
-    remoteRef:
-      key: feature-flags/launchdarkly
-      property: mobile_sdk_key
-
----
-# ClusterSecretStore for organization-wide access
-apiVersion: external-secrets.io/v1beta1
-kind: ClusterSecretStore
-metadata:
-  name: aws-secrets-manager-cluster
-spec:
-  provider:
-    aws:
-      service: SecretsManager
-      region: us-west-2
-      auth:
-        jwt:
-          serviceAccountRef:
-            name: external-secrets-sa
-            namespace: external-secrets-system
-
----
-# IRSA Service Account for External Secrets Operator
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: external-secrets-sa
-  namespace: feature-flags
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT-ID:role/external-secrets-role
-automountServiceAccountToken: true</code></pre>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">Service Deployment with Feature Flags</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># Kubernetes deployment with LaunchDarkly integration
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: user-service
-  namespace: production
-  labels:
-    app: user-service
-    version: v2.1.0
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: user-service
-  template:
-    metadata:
-      labels:
-        app: user-service
-        version: v2.1.0
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9090"
-        prometheus.io/path: "/metrics"
-    spec:
-      serviceAccountName: user-service-sa
-      
-      # Security context
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 2000
-        
-      containers:
-      - name: user-service
-        image: highspot/user-service:v2.1.0
-        ports:
-        - containerPort: 8080
-          name: http
-        - containerPort: 9090
-          name: metrics
-          
-        # Environment variables for feature flag configuration
-        env:
-        - name: SERVICE_NAME
-          value: "user-service"
-        - name: ENVIRONMENT
-          value: "production"
-        - name: LAUNCHDARKLY_SDK_KEY
-          valueFrom:
-            secretKeyRef:
-              name: launchdarkly-sdk-keys
-              key: production-sdk-key
-        - name: FEATURE_FLAGS_ENABLED
-          value: "true"
-        - name: LOG_LEVEL
-          value: "info"
-        - name: METRICS_ENABLED
-          value: "true"
-        
-        # Health checks
-        livenessProbe:
-          httpGet:
-            path: /health/live
-            port: 8080
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 5
-          failureThreshold: 3
-          
-        readinessProbe:
-          httpGet:
-            path: /health/ready
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 5
-          timeoutSeconds: 3
-          failureThreshold: 3
-          
-        # Resource limits
-        resources:
-          limits:
-            cpu: 1000m
-            memory: 1Gi
-          requests:
-            cpu: 500m
-            memory: 512Mi
-            
-        # Volume mounts for configuration
-        volumeMounts:
-        - name: config
-          mountPath: /app/config
-          readOnly: true
-      
-      volumes:
-      - name: config
-        configMap:
-          name: user-service-config
-          
-      # Pod disruption budget for high availability
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - user-service
-              topologyKey: kubernetes.io/hostname
-
----
-# Service for user-service
-apiVersion: v1
-kind: Service
-metadata:
-  name: user-service
-  namespace: production
-  labels:
-    app: user-service
-spec:
-  selector:
-    app: user-service
-  ports:
-  - port: 80
-    targetPort: 8080
-    protocol: TCP
-    name: http
-  - port: 9090
-    targetPort: 9090
-    protocol: TCP
-    name: metrics
-  type: ClusterIP</code></pre>
-                </div>
-                
-                <h4 class="text-lg font-semibold text-gray-800 mb-2">Terraform AWS Infrastructure</h4>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 text-sm font-mono overflow-x-auto">
-                    <pre><code># Terraform configuration for LaunchDarkly infrastructure
-resource "aws_secretsmanager_secret" "launchdarkly_keys" {
-  name        = "feature-flags/launchdarkly"
-  description = "LaunchDarkly SDK keys for feature flag system"
-  
-  replica {
-    region = "us-east-1"
-  }
-  
-  tags = {
-    Environment = var.environment
-    Service     = "feature-flags"
-    Purpose     = "launchdarkly-integration"
-  }
-}
-
-resource "aws_secretsmanager_secret_version" "launchdarkly_keys" {
-  secret_id = aws_secretsmanager_secret.launchdarkly_keys.id
-  secret_string = jsonencode({
-    production_sdk_key = var.launchdarkly_production_key
-    staging_sdk_key    = var.launchdarkly_staging_key
-    mobile_sdk_key     = var.launchdarkly_mobile_key
-  })
-  
-  lifecycle {
-    ignore_changes = [secret_string]
-  }
-}
-
-# IAM role for External Secrets Operator
-resource "aws_iam_role" "external_secrets_role" {
-  name = "${var.environment}-external-secrets-role"
-  
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRoleWithWebIdentity"
-        Effect = "Allow"
-        Principal = {
-          Federated = var.oidc_provider_arn
-        }
-        Condition = {
-          StringEquals = {
-            "${var.oidc_provider}:sub": "system:serviceaccount:external-secrets-system:external-secrets-sa"
-            "${var.oidc_provider}:aud": "sts.amazonaws.com"
-          }
-        }
-      }
-    ]
-  })
-  
-  tags = {
-    Environment = var.environment
-    Service     = "external-secrets"
-  }
-}
-
-resource "aws_iam_policy" "external_secrets_policy" {
-  name = "${var.environment}-external-secrets-policy"
-  
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Action = [
-          "secretsmanager:GetSecretValue",
-          "secretsmanager:DescribeSecret"
-        ]
-        Resource = [
-          aws_secretsmanager_secret.launchdarkly_keys.arn,
-          "${aws_secretsmanager_secret.launchdarkly_keys.arn}*"
-        ]
-      }
-    ]
-  })
-}
-
-resource "aws_iam_role_policy_attachment" "external_secrets_policy" {
-  role       = aws_iam_role.external_secrets_role.name
-  policy_arn = aws_iam_policy.external_secrets_policy.arn
-}</code></pre>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <h5 class="font-semibold text-blue-800 mb-2">
-                            <i class="fab fa-github mr-2"></i>Repository Links
-                        </h5>
-                        <ul class="text-blue-700 text-sm space-y-1">
-                            <li><a href="#" class="hover:underline">→ LaunchDarkly Clojure Integration</a></li>
-                            <li><a href="#" class="hover:underline">→ External Secrets Operator Config</a></li>
-                            <li><a href="#" class="hover:underline">→ Feature Flag Service Templates</a></li>
-                            <li><a href="#" class="hover:underline">→ Decentralized Architecture Patterns</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <h5 class="font-semibold text-green-800 mb-2">
-                            <i class="fas fa-file-code mr-2"></i>Technical Documentation
-                        </h5>
-                        <ul class="text-green-700 text-sm space-y-1">
-                            <li><a href="#" class="hover:underline">→ Feature Flag Architecture Guide</a></li>
-                            <li><a href="#" class="hover:underline">→ Security & Secret Management</a></li>
-                            <li><a href="#" class="hover:underline">→ Progressive Rollout Strategies</a></li>
-                            <li><a href="#" class="hover:underline">→ Zero-Config Deployment Patterns</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="detail-section">
+                <h3>Key Technologies & Tools</h3>
+                <p class="text-gray-700">Clojure, Java, LaunchDarkly SDK, AWS Secrets Manager, External Secrets Operator (ESO), Kubernetes, ArgoCD, New Relic.</p>
             </div>
 
             <div class="detail-section">
-                <h3>Development Practices & Quality Assurance</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
-                            <i class="fas fa-vial mr-2 text-purple-600"></i>Feature Flag Testing Strategy
-                        </h4>
-                        <div class="space-y-3">
-                            <div class="bg-purple-50 p-3 rounded">
-                                <h5 class="font-medium text-purple-800">Integration Testing</h5>
-                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
-                                    <li>• LaunchDarkly SDK integration verification</li>
-                                    <li>• Feature flag evaluation logic testing</li>
-                                    <li>• Circuit breaker and fallback testing</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-purple-50 p-3 rounded">
-                                <h5 class="font-medium text-purple-800">Security Testing</h5>
-                                <ul class="text-purple-700 text-sm mt-1 space-y-1">
-                                    <li>• ESO secret rotation and validation</li>
-                                    <li>• IRSA permission boundary testing</li>
-                                    <li>• Token security and encryption verification</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-3">
-                            <i class="fab fa-git-alt mr-2 text-orange-600"></i>Feature Flag Operations
-                        </h4>
-                        <div class="space-y-3">
-                            <div class="bg-orange-50 p-3 rounded">
-                                <h5 class="font-medium text-orange-800">Deployment Strategy</h5>
-                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
-                                    <li>• Zero-config service deployment</li>
-                                    <li>• Progressive feature rollouts</li>
-                                    <li>• Automated flag evaluation monitoring</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-orange-50 p-3 rounded">
-                                <h5 class="font-medium text-orange-800">Operational Excellence</h5>
-                                <ul class="text-orange-700 text-sm mt-1 space-y-1">
-                                    <li>• Real-time flag performance monitoring</li>
-                                    <li>• Automated secret rotation</li>
-                                    <li>• Cross-service feature coordination</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                        <i class="fas fa-shield-alt mr-2 text-green-600"></i>Feature Flag System Metrics
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-blue-600">100%</div>
-                            <div class="text-sm text-gray-600">Zero-Config Deployment</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-green-600">80%</div>
-                            <div class="text-sm text-gray-600">Deployment Risk Reduction</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-purple-600">40%</div>
-                            <div class="text-sm text-gray-600">Faster Iteration Cycles</div>
-                        </div>
-                    </div>
-                </div>
+                <h3>Situation</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Highspot's existing deployment process was monolithic and rigid, characterized by infrequent, large-batch releases. This made it challenging to introduce new features incrementally, conduct A/B tests on user segments, or dynamically alter application behavior (e.g., enabling/disabling features for specific customers or environments) without requiring full, high-risk deployments. Such rigidity significantly slowed down iteration cycles, increased the potential for production incidents due to large blast radii, and limited the ability to perform dark launches or controlled rollouts.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Task</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Design, develop, and integrate a flexible, secure, and highly available feature flag system using LaunchDarkly into the existing Clojure microservices architecture. The primary goal was to enable controlled feature rollouts, dynamic configuration management, and A/B testing capabilities, thereby reducing deployment risk and accelerating the pace of innovation.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Action</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Spearheaded the architectural design of the new feature flag system, selecting LaunchDarkly as the preferred solution and writing core Clojure code to initialize the LaunchDarkly SDK client within the critical Magma microservice.</li>
+                    <li>Developed a feature-service wrapper around the raw LaunchDarkly client to promote reusability and provide a simplified, consistent interface for other application components.</li>
+                    <li>Implemented a sophisticated feature manager component responsible for coordinating between the feature-service and various flag sources, including a fallback mechanism to Mongo for legacy flags or in scenarios where LaunchDarkly might be unavailable.</li>
+                    <li>Authored and championed a Pull Request (PR) for integrating the LaunchDarkly SDK key via External Secrets Operator (ESO) with AWS Secrets Manager, ensuring sensitive API keys were never hardcoded and securely distributed to Kubernetes pods.</li>
+                    <li>Refactored the singleton initialization of the LaunchDarkly client from lazy loading to an eager initialization model within systems.clj and migrated lifecycle management to defstate for robust and predictable state management.</li>
+                    <li>Developed custom scripts and comprehensive unit/integration tests to rigorously validate the end-to-end flag flow in Magma, including creating test cases for various scenarios and debugging complex runtime errors.</li>
+                    <li>Implemented multi-context feature flag fetching to support sophisticated targeting rules.</li>
+                    <li>Deployed the system to su0 (a specific scale unit within the latest environment) for live testing with real traffic.</li>
+                    <li>Initiated the setup for data source monitoring of LaunchDarkly connectivity within New Relic, establishing alerts for service health.</li>
+                    <li>Maintained active and transparent collaboration with team leads (Anna, Dylan) for architectural discussions, design reviews, and code feedback.</li>
+                    <li>Partnered closely with other engineers (Pankaj, Justin) to debug complex inter-service issues.</li>
+                    <li>Documented the entire integration process in Confluence and conducted formal knowledge transfer sessions for relevant engineering teams.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Result</h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li>Successfully designed, developed, and integrated a robust, decentralized feature flag system that is production-ready and deployed to su0.</li>
+                    <li>Significantly reduced deployment risk by enabling controlled feature rollouts, dark launches, and A/B testing without requiring full application redeployments.</li>
+                    <li>Led to faster iteration cycles for product development and improved developer productivity by decoupling feature releases from code deployments.</li>
+                    <li>Enhanced the ability to conduct real-time experimentation and ensured secure key management through ESO integration, bolstering the platform's security posture.</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h3>Review</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This project was a critical success, fundamentally transforming Highspot's feature delivery capabilities and accelerating its product development lifecycle. My ability to lead the design, implement complex Clojure code, integrate securely with external services, and conduct thorough, multi-faceted testing was paramount. The collaborative approach, especially in debugging intricate cross-service issues, proved highly effective in overcoming technical hurdles. The system now provides a flexible, resilient, and safe mechanism for future product innovation and experimentation, allowing Highspot to be more agile and responsive to market demands.
+                </p>
             </div>
 
             <div class="mt-8 flex justify-center space-x-4">
@@ -767,39 +92,13 @@ resource "aws_iam_role_policy_attachment" "external_secrets_policy" {
                     <i class="fas fa-home"></i> <span>Back to Home</span>
                 </a>
             </div>
-
-        <!-- Project Navigation Section -->
-
-    <!-- Call-to-Action Section -->
-    <section class="py-16 md:py-20 bg-gradient-to-br from-indigo-600 to-purple-800">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center text-white">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Need Feature Management at Scale?
-                </h2>
-                <p class="text-xl mb-8 opacity-90 leading-relaxed">
-                    Let's discuss how my feature flag architecture and DevOps expertise can enable 
-                    safe deployments and enhanced development velocity for your organization.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#" onclick="openContactModal()" 
-                       class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-envelope mr-2"></i>Discuss Your Needs
-                    </a>
-                    <a href="skills-graphical.html" 
-                       class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors inline-flex items-center justify-center">
-                        <i class="fas fa-tools mr-2"></i>View DevOps Skills
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Placeholder for Footer -->
+    <!-- Placeholder for Footer - REPLACED EXISTING FOOTER -->
     <div id="footer-placeholder"></div>
 
-    <!-- Placeholder for Contact Modal HTML Structure -->
+    <!-- Placeholder for Contact Modal HTML Structure - REPLACED EXISTING MODAL -->
     <div id="contact-modal-placeholder"></div>
 
     <!-- Link to external JavaScript file -->
